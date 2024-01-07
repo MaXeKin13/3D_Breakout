@@ -146,6 +146,6 @@ public class PlayerMovement : MonoBehaviour
         _cameraTrans.parent = _playerTrans;
         _rb.constraints = RigidbodyConstraints.FreezeAll;
         _cameraTrans.position = _playerTrans.position;
-        _cameraTrans.rotation = Quaternion.Euler(0,0,0);
+        _cameraTrans.rotation = _playerTrans.rotation;
     }
 }
