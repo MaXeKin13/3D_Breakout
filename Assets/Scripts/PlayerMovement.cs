@@ -8,6 +8,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _rb;
     private PlayerInput _playerInput;
     private PlayerInputACtions _playerInputACtions;
+
+    private Transform _playerTrans;
+    private Transform _cameraTrans;
+    public Transform _controlledObj;
     
     //rotate
     private Vector2 _rotateInput;
@@ -30,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _playerInput = GetComponent<PlayerInput>();
 
+        _playerTrans = GetComponent<Transform>();
+        _controlledObj = GetComponent<Transform>();
+        _cameraTrans = Camera.main.GetComponent<Transform>();
+
         //PlayerInputACtions playerInputACtions = new PlayerInputACtions();
         _playerInputACtions = new PlayerInputACtions();
         _playerInputACtions.Player.Enable();
@@ -40,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         //when player stops moving mouse
         _playerInputACtions.Player.Rotate.canceled += OnMouseStop;
 
+        _playerInputACtions.Player.SwapControl.performed += SwitchCam;
         //using C# events
         // _playerInput.onActionTriggered += PlayerInput_onActionTriggered;
 
@@ -52,10 +61,10 @@ public class PlayerMovement : MonoBehaviour
         //_rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y)*speed, ForceMode.Force);
         
         // Get the forward direction in local space
-        Vector3 forwardDirection = transform.forward;
+        Vector3 forwardDirection = _controlledObj.forward;
 
         // Transform the input vector to world space using the object's forward direction
-        Vector3 movement = transform.TransformDirection(new Vector3(inputVector.x, 0, inputVector.y)) * speed;
+        Vector3 movement = _controlledObj.TransformDirection(new Vector3(inputVector.x, 0, inputVector.y)) * speed;
 
         // Apply force in the transformed local space
         _rb.AddForce(movement, ForceMode.Force);
@@ -66,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontalRotation = _rotateInput.x* CalculateRotationSpeed()/xRotateReduction;
         float verticalRotation = _rotateInput.y* CalculateRotationSpeed()/yRotateReduction;
 
-        transform.localEulerAngles += new Vector3(-verticalRotation, horizontalRotation, 0);
+        _controlledObj.localEulerAngles += new Vector3(-verticalRotation, horizontalRotation, 0);
 
         _previousRotateInput = _rotateInput;
     }
@@ -85,20 +94,7 @@ public class PlayerMovement : MonoBehaviour
             _previousRotationSpeed = rotationSpeed;
 
             return rotationSpeed;
-        
-        //To Do: Doesnt work perfectly.
-        // Calculate the speed based on the change in input
-        
-        /*float rotationSpeed = baseRotationSpeed + Mathf.Abs(_rotateInput.magnitude - _previousRotateInput.magnitude) * maxRotationSpeed;
-        //Tobi way
-        //float rotationSpeed = baseRotationSpeed + Mathf.Abs(_rotateInput.sqrMagnitude - _previousRotateInput.sqrMagnitude) * maxRotationSpeed * maxRotationSpeed;
-        return rotationSpeed;*/
     }
-
-    /*private void PlayerInput_onActionTriggered(InputAction.CallbackContext obj)
-    {
-        throw new System.NotImplementedException();
-    }*/
 
     public void Jump(InputAction.CallbackContext context)
     {
@@ -116,5 +112,40 @@ public class PlayerMovement : MonoBehaviour
     private void OnMouseStop(InputAction.CallbackContext context)
     {
         _rotateInput = Vector2.zero;
+    }
+
+    //when pressing right mouse can move the camera independently from character
+    //doesnt go back to main view automatically
+    //when press button it snaps back
+    
+    //switch control to camera
+    void SwitchCam(InputAction.CallbackContext context)
+    {
+        Debug.Log("Switch");
+       // _controlledObj = _playerTrans ? _cameraTrans : _playerTrans;
+       if (_controlledObj == _playerTrans)
+       {
+           _controlledObj = _cameraTrans;
+           _cameraTrans.parent = null;
+       }
+       else
+       {
+           _controlledObj = _playerTrans;
+           ResetCam();
+       }
+
+       
+       
+        _rb = _controlledObj.GetComponent<Rigidbody>();
+        _rb.constraints = RigidbodyConstraints.None;
+        _rb.constraints = RigidbodyConstraints.FreezeRotation;
+    }
+
+    private void ResetCam()
+    {
+        _cameraTrans.parent = _playerTrans;
+        _rb.constraints = RigidbodyConstraints.FreezeAll;
+        _cameraTrans.position = _playerTrans.position;
+        _cameraTrans.rotation = Quaternion.Euler(0,0,0);
     }
 }
