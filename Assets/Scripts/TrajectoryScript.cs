@@ -65,6 +65,9 @@ public class TrajectoryScript : MonoBehaviour
                 _previousHit.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
 
             _previousHit = null;
+            
+            SetLinePoints(transform.position + transform.forward * 5f, 1);
+            SetLinePoints(transform.position + transform.forward * 5f, 2);
         }
     }
 

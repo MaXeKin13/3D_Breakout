@@ -5,19 +5,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody _rb;
-    private PlayerInput _playerInput;
-    private PlayerInputACtions _playerInputACtions;
-
-    private Transform _playerTrans;
-    private Transform _cameraTrans;
+   
     public Transform _controlledObj;
-    
-    //rotate
-    private Vector2 _rotateInput;
-    //previous rotation value
-    private Vector2 _previousRotateInput;
-    
+
     public float baseRotationSpeed = 2f;
     public float maxRotationSpeed = 10f;
 
@@ -26,8 +16,20 @@ public class PlayerMovement : MonoBehaviour
     
     
 
+    private Rigidbody _rb;
+    private PlayerInput _playerInput;
+    private PlayerInputACtions _playerInputACtions;
     
+    private Transform _playerTrans;
+    private Transform _cameraTrans;
+    //rotate
+    private Vector2 _rotateInput;
+    //previous rotation value
+    private Vector2 _previousRotateInput;
 
+    private bool _isGrounded;
+    private bool _isControllingCam;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -47,10 +49,9 @@ public class PlayerMovement : MonoBehaviour
         _playerInputACtions.Player.Rotate.performed += OnMouseMove;
         //when player stops moving mouse
         _playerInputACtions.Player.Rotate.canceled += OnMouseStop;
-
+        //when player right mouse click
         _playerInputACtions.Player.SwapControl.performed += SwitchCam;
-        //using C# events
-        // _playerInput.onActionTriggered += PlayerInput_onActionTriggered;
+        
 
     }
 
@@ -98,9 +99,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        Debug.Log(context);
-        if(context.performed)
+        if(context.performed && _isGrounded == true && !_isControllingCam)
             _rb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
+        if(_isControllingCam)
+            _rb.AddForce(Vector3.up * 1f, ForceMode.Impulse);
     }
     
     //my own attempt
@@ -121,20 +123,18 @@ public class PlayerMovement : MonoBehaviour
     //switch control to camera
     void SwitchCam(InputAction.CallbackContext context)
     {
-        Debug.Log("Switch");
-       // _controlledObj = _playerTrans ? _cameraTrans : _playerTrans;
-       if (_controlledObj == _playerTrans)
-       {
+        if (_controlledObj == _playerTrans)
+        {
+            _isControllingCam = true;
            _controlledObj = _cameraTrans;
            _cameraTrans.parent = null;
-       }
-       else
-       {
-           _controlledObj = _playerTrans;
-           ResetCam();
-       }
-
-       
+        }
+        else
+        {
+            _isControllingCam = false;
+            _controlledObj = _playerTrans;
+            ResetCam();
+        }
        
         _rb = _controlledObj.GetComponent<Rigidbody>();
         _rb.constraints = RigidbodyConstraints.None;
@@ -147,5 +147,21 @@ public class PlayerMovement : MonoBehaviour
         _rb.constraints = RigidbodyConstraints.FreezeAll;
         _cameraTrans.position = _playerTrans.position;
         _cameraTrans.rotation = _playerTrans.rotation;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Ground"))
+        {
+            _isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.transform.CompareTag("Ground"))
+        {
+            _isGrounded = false;
+        }
     }
 }
