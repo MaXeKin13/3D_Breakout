@@ -10,8 +10,8 @@ public class TrajectoryScript : MonoBehaviour
     private Transform _previousHit2;
 
     //To Do: array for hits (instead of just 2 objects)
-    private Transform[] _previousHits;
 
+    private List<Vector3> _hits;
     private void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
@@ -35,17 +35,16 @@ public class TrajectoryScript : MonoBehaviour
             Vector3 reflectedDirection = Vector3.Reflect(transform.forward, hit.normal);
 
             // Send raycast towards reflected direction
-            Vector3 reflectedContactPoint = contactPoint + reflectedDirection * 5f;
-            
+            Vector3 reflectedContactPoint = contactPoint + reflectedDirection * 5f; //length of 5f;
             
             //if second raycast doesnt hit another object
             if (!Raycast2(contactPoint, reflectedDirection))
             {
                 SetLinePoints(reflectedContactPoint, 2);
             }
-            
+            //set second line position to first contact point
             SetLinePoints(contactPoint, 1);
-
+            
             // Activate outline
             hit.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
 
@@ -55,7 +54,6 @@ public class TrajectoryScript : MonoBehaviour
                 // Disable sprite renderer of the previous hit object
                 _previousHit.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
             }
-
             // Set the current hit object as the previous hit
             _previousHit = hit.transform;
         }
@@ -109,10 +107,5 @@ public class TrajectoryScript : MonoBehaviour
         
     }
     
-    /*private void SetLinePoints(Vector3 contactPoint, Vector3 secondPoint)
-    {
-        _lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z));
-        _lineRenderer.SetPosition(1, contactPoint);
-        _lineRenderer.SetPosition(2, secondPoint);
-    }*/
+   
 }
