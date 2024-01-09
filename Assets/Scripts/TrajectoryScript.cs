@@ -15,6 +15,7 @@ public class TrajectoryScript : MonoBehaviour
     private void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
+        _hits = new List<Vector3>();
     }
 
     private void FixedUpdate()
@@ -24,7 +25,7 @@ public class TrajectoryScript : MonoBehaviour
 
     void SendRaycast()
     {
-        // Send raycast
+        // Send initial raycast
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, 1 << 8))
         {
