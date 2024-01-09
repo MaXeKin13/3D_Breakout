@@ -9,6 +9,9 @@ public class TrajectoryScript : MonoBehaviour
     private Transform _previousHit;
     private Transform _previousHit2;
 
+    //To Do: array for hits (instead of just 2 objects)
+    private Transform[] _previousHits;
+
     private void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
@@ -33,9 +36,7 @@ public class TrajectoryScript : MonoBehaviour
 
             // Send raycast towards reflected direction
             Vector3 reflectedContactPoint = contactPoint + reflectedDirection * 5f;
-
-            // CalculateTrajectory(contactPoint, reflectedContactPoint);
-            //Raycast2(contactPoint, reflectedContactPoint);
+            
             
             //if second raycast doesnt hit another object
             if (!Raycast2(contactPoint, reflectedDirection))
@@ -78,6 +79,7 @@ public class TrajectoryScript : MonoBehaviour
             // Get exact point of contact
             var contactPoint = hit.point;
             Debug.Log(hit);
+            
             // Activate outline
             hit.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
             

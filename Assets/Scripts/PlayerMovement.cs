@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
 
     //when pressing right mouse can move the camera independently from character
     //doesnt go back to main view automatically
-    //when press button it snaps back
+    //when press right mouse it snaps back
     
     //switch control to camera
     void SwitchCam(InputAction.CallbackContext context)
