@@ -36,7 +36,7 @@ public class TrajectoryScript : MonoBehaviour
             Vector3 reflectedDirection = Vector3.Reflect(transform.forward, hit.normal);
 
             // Send raycast towards reflected direction
-            Vector3 reflectedContactPoint = contactPoint + reflectedDirection * 5f; //length of 5f;
+            Vector3 reflectedContactPoint = contactPoint + reflectedDirection * 100f; //length of 5f;
             
             //if second raycast doesnt hit another object
             if (!Raycast2(contactPoint, reflectedDirection))
@@ -83,7 +83,8 @@ public class TrajectoryScript : MonoBehaviour
             Debug.Log(hit);
             
             // Activate outline
-            hit.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+            if(hit.transform.CompareTag("Breakable"))
+                hit.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
             
             if (_previousHit2 != null && _previousHit2 != hit.transform)
             {

@@ -8,6 +8,8 @@ public class PlayerScript : MonoBehaviour
 {
     private PlayerInputACtions _playerInputACtions;
     private PlayerInput _playerInput;
+    
+    
     private void Start()
     {
         _playerInput = GetComponent<PlayerInput>();
