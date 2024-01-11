@@ -7,30 +7,30 @@ public class TrajectoryScript : MonoBehaviour
 {
    private LineRenderer _lineRenderer;
     private Transform _previousHit;
-    private Transform _previousHit2;
+    private Transform _nextHit;
 
     //To Do: array for hits (instead of just 2 objects)
 
-    private List<Vector3> _hits;
-    private void Start()
+    private List<Vector3> _hits = new();
+    private void Awake()
     {
         _lineRenderer = GetComponent<LineRenderer>();
-        _hits = new List<Vector3>();
+        
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         SendRaycast();
     }
 
-    void SendRaycast()
+    private void SendRaycast()
     {
         // Send initial raycast
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, 1 << 8))
+        
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, Mathf.Infinity, 1 << 8))
         {
             // Get exact point of contact
-            var contactPoint = hit.point;
+            Vector3 contactPoint = hit.point;
 
             // Calculate trajectory
             Vector3 reflectedDirection = Vector3.Reflect(transform.forward, hit.normal);
@@ -39,7 +39,7 @@ public class TrajectoryScript : MonoBehaviour
             Vector3 reflectedContactPoint = contactPoint + reflectedDirection * 100f; //length of 5f;
             
             //if second raycast doesnt hit another object
-            if (!Raycast2(contactPoint, reflectedDirection))
+            if (!SendNextRaycast(contactPoint, reflectedDirection))
             {
                 SetLinePoints(reflectedContactPoint, 2);
             }
@@ -65,37 +65,38 @@ public class TrajectoryScript : MonoBehaviour
                 _previousHit.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
 
             _previousHit = null;
-            
-            SetLinePoints(transform.position + transform.forward * 5f, 1);
-            SetLinePoints(transform.position + transform.forward * 5f, 2);
+            Vector3 contactPoint = transform.position + transform.forward;
+            SetLinePoints(contactPoint * 5f, 1);
+            SetLinePoints(contactPoint * 5f, 2);
         }
     }
 
-    bool Raycast2(Vector3 pos, Vector3 dir)
+    //I think you could come up with a generalized method to cast the ray as you need it.
+    //Once you get the list going, you could safe on having this entire method cluttering your code.
+    bool SendNextRaycast(Vector3 pos, Vector3 dir)
     {
         Debug.DrawRay(pos, dir, Color.blue, 1f);
         RaycastHit hit;
         if (Physics.Raycast(pos, dir, out hit, Mathf.Infinity, 1<<8))
         {
             
-            // Get exact point of contact
-            var contactPoint = hit.point;
+            
             Debug.Log(hit);
             
             // Activate outline
             if(hit.transform.CompareTag("Breakable"))
                 hit.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
             
-            if (_previousHit2 != null && _previousHit2 != hit.transform)
+            if (_nextHit != null && _nextHit != hit.transform)
             {
                 // Disable sprite renderer of the previous hit object
-                _previousHit2.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+                _nextHit.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
             }
 
             // Set the current hit object as the previous hit
-            _previousHit2 = hit.transform;
+            _nextHit = hit.transform;
             //set line
-            SetLinePoints(contactPoint, 2);
+            SetLinePoints(hit.point, 2);
             return true;
         }
         else
