@@ -32,5 +32,20 @@ public class Bullet : MonoBehaviour
             GameObject hit = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(hit, 0.5f);
         }
+
+       
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag("Powerup"))
+        {
+            if (other.transform.GetComponent<Powerup>()._powerupType == Powerup.PowerupType.Double)
+            {
+                other.gameObject.SetActive(false);
+                _rb.AddForce(transform.right * speed / 2f, ForceMode.Impulse);
+                Instantiate(gameObject);
+            }
+        }
     }
 }

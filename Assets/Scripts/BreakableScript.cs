@@ -5,13 +5,17 @@ using UnityEngine;
 
 public class BreakableScript : MonoBehaviour
 {
+    public bool canHighlight;
     public int health;
     private Material _mat;
-
+    [HideInInspector] public MeshRenderer highlight;
+    [HideInInspector] public Vector3 xNormal;
     private void Start()
     {
+        xNormal = transform.right;
         _mat = GetComponent<MeshRenderer>().material;
         ChangeColor();
+        highlight = transform.GetChild(0).GetComponent<MeshRenderer>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -27,6 +31,15 @@ public class BreakableScript : MonoBehaviour
         if(health <= 0)
             Death();
             
+    }
+
+    public void SetHighlight(bool active)
+    {
+        if (active)
+            highlight.enabled = true;
+        else
+            highlight.enabled = false;
+
     }
 
     void ChangeColor()
