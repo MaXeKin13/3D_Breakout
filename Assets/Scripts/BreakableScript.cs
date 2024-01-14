@@ -29,6 +29,7 @@ public class BreakableScript : MonoBehaviour
     {
         health--;
         ChangeColor();
+        ScoreManager.Instance.AddScore(1);
         if(health <= 0)
             Death();
             
