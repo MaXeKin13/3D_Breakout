@@ -13,16 +13,19 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = (Instance == null) ? this : Instance;
+        
+        LockCursor();
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha0))
-            LockCursor();
+        /*if(Input.GetKeyDown(KeyCode.Alpha0))
+            LockCursor();*/
     }
 
     private void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BreakableScript : MonoBehaviour
 {
+    public bool canBeDestroyed = true;
     public bool canHighlight;
     public int health;
     private Material _mat;
@@ -20,7 +21,7 @@ public class BreakableScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.CompareTag("Bullet"))
+        if(collision.transform.CompareTag("Bullet") && canBeDestroyed)
            GetHit();
     }
 
@@ -46,6 +47,9 @@ public class BreakableScript : MonoBehaviour
     {
         switch (health)
         {
+            case 4:
+                _mat.color = Color.yellow;
+                break;
             case 3: 
                 _mat.color = Color.green;
                 break;
