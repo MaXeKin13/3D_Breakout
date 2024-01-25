@@ -7,6 +7,8 @@ public class BreakableScript : MonoBehaviour
 {
     public bool canBeDestroyed = true;
     public bool canHighlight;
+    public bool isTransparent;
+    [Space]
     public int health;
     private Material _mat;
     [HideInInspector] public MeshRenderer highlight;
@@ -17,6 +19,8 @@ public class BreakableScript : MonoBehaviour
         _mat = GetComponent<MeshRenderer>().material;
         ChangeColor();
         highlight = transform.GetChild(0).GetComponent<MeshRenderer>();
+        
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -46,21 +50,39 @@ public class BreakableScript : MonoBehaviour
 
     void ChangeColor()
     {
-        switch (health)
-        {
-            case 4:
-                _mat.color = Color.yellow;
-                break;
-            case 3: 
-                _mat.color = Color.green;
-                break;
-            case 2:
-                _mat.color = Color.blue;
-                break;
-            case 1:
-                _mat.color = Color.red;
-                break;
-        }
+        if(!isTransparent)
+            switch (health)
+            {
+                case 4:
+                    _mat.color = Color.yellow;
+                    break;
+                case 3: 
+                    _mat.color = Color.green;
+                    break;
+                case 2:
+                    _mat.color = Color.blue;
+                    break;
+                case 1:
+                    _mat.color = Color.red;
+                    break;
+            }
+        else
+            switch (health)
+            {
+                case 4:
+                    _mat.color = new Color(1, 0.92f, 0.016f, 0.3f);
+                    break;
+                case 3: 
+                    _mat.color = new Color(0, 1f, 0f, 0.3f);
+                    break;
+                case 2:
+                    _mat.color = new Color(0, 0, 1, 0.3f);
+                    break;
+                case 1:
+                    _mat.color = new Color(1, 0, 0f, 0.3f);
+                    break;
+            }
+        
     }
     void Death()
     {
