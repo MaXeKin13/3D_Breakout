@@ -6,17 +6,18 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed;
-
+    public float hitTimer = 5f;
     public GameObject hitEffect;
     [Space] 
     public float power;
     
     private Rigidbody _rb;
-    
+    private float currentTime;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         Shoot();
+        StartCoroutine(DespawnTimer());
     }
 
     private void Shoot()
@@ -28,9 +29,13 @@ public class Bullet : MonoBehaviour
     {
         if (other.transform.CompareTag("Breakable"))
         {
+            
             BreakableScript obj = other.transform.GetComponent<BreakableScript>();
             GameObject hit = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(hit, 0.5f);
+
+            currentTime = 0;
+            
         }
 
        
@@ -48,4 +53,16 @@ public class Bullet : MonoBehaviour
             }
         }
     }
+
+    private IEnumerator DespawnTimer()
+    {
+        while (currentTime < hitTimer)
+        {
+            currentTime += Time.deltaTime;
+            Debug.Log(currentTime);
+            yield return null;
+        }
+        Destroy(gameObject);
+    }
+    
 }

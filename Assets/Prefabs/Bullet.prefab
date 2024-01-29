@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  hitTimer: 5
   hitEffect: {fileID: 138478, guid: ca22a39cb3cd5934eb44c379371b2cbb, type: 3}
   power: 0
 --- !u!23 &7631160142479072861
