@@ -196,6 +196,22 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "CameraMap",
+            "id": "1598e19b-b982-4c60-9514-be545743534d",
+            "actions": [
+                {
+                    "name": "SnapCamera",
+                    "type": "Value",
+                    "id": "17691b47-441f-4bc1-b01c-eff17b94a874",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": []
         }
     ],
     "controlSchemes": []

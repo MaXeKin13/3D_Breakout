@@ -59,7 +59,7 @@ public class Bullet : MonoBehaviour
         while (currentTime < hitTimer)
         {
             currentTime += Time.deltaTime;
-            Debug.Log(currentTime);
+            
             yield return null;
         }
         Destroy(gameObject);

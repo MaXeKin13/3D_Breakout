@@ -218,6 +218,22 @@ public partial class @PlayerInputACtions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""CameraMap"",
+            ""id"": ""1598e19b-b982-4c60-9514-be545743534d"",
+            ""actions"": [
+                {
+                    ""name"": ""SnapCamera"",
+                    ""type"": ""Value"",
+                    ""id"": ""17691b47-441f-4bc1-b01c-eff17b94a874"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": []
         }
     ],
     ""controlSchemes"": []
@@ -229,6 +245,9 @@ public partial class @PlayerInputACtions: IInputActionCollection2, IDisposable
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_SwapControl = m_Player.FindAction("SwapControl", throwIfNotFound: true);
+        // CameraMap
+        m_CameraMap = asset.FindActionMap("CameraMap", throwIfNotFound: true);
+        m_CameraMap_SnapCamera = m_CameraMap.FindAction("SnapCamera", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -364,6 +383,52 @@ public partial class @PlayerInputACtions: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // CameraMap
+    private readonly InputActionMap m_CameraMap;
+    private List<ICameraMapActions> m_CameraMapActionsCallbackInterfaces = new List<ICameraMapActions>();
+    private readonly InputAction m_CameraMap_SnapCamera;
+    public struct CameraMapActions
+    {
+        private @PlayerInputACtions m_Wrapper;
+        public CameraMapActions(@PlayerInputACtions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SnapCamera => m_Wrapper.m_CameraMap_SnapCamera;
+        public InputActionMap Get() { return m_Wrapper.m_CameraMap; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CameraMapActions set) { return set.Get(); }
+        public void AddCallbacks(ICameraMapActions instance)
+        {
+            if (instance == null || m_Wrapper.m_CameraMapActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CameraMapActionsCallbackInterfaces.Add(instance);
+            @SnapCamera.started += instance.OnSnapCamera;
+            @SnapCamera.performed += instance.OnSnapCamera;
+            @SnapCamera.canceled += instance.OnSnapCamera;
+        }
+
+        private void UnregisterCallbacks(ICameraMapActions instance)
+        {
+            @SnapCamera.started -= instance.OnSnapCamera;
+            @SnapCamera.performed -= instance.OnSnapCamera;
+            @SnapCamera.canceled -= instance.OnSnapCamera;
+        }
+
+        public void RemoveCallbacks(ICameraMapActions instance)
+        {
+            if (m_Wrapper.m_CameraMapActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ICameraMapActions instance)
+        {
+            foreach (var item in m_Wrapper.m_CameraMapActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_CameraMapActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public CameraMapActions @CameraMap => new CameraMapActions(this);
     public interface IPlayerActions
     {
         void OnJump(InputAction.CallbackContext context);
@@ -371,5 +436,9 @@ public partial class @PlayerInputACtions: IInputActionCollection2, IDisposable
         void OnRotate(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnSwapControl(InputAction.CallbackContext context);
+    }
+    public interface ICameraMapActions
+    {
+        void OnSnapCamera(InputAction.CallbackContext context);
     }
 }
