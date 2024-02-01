@@ -25,7 +25,7 @@ public class TestTraj : MonoBehaviour
     private void Update()
     {
         //SendRaycast();
-        if(Input.GetKeyDown(KeyCode.A))
+        //if(Input.GetKeyDown(KeyCode.A))
             NewRaycast();
     }
 
@@ -132,8 +132,11 @@ public class TestTraj : MonoBehaviour
         
     }
     
+    
+    
+    
+    
     //new system
-
     public struct HitData
     {
         public Vector3 hitPoint;
@@ -142,6 +145,7 @@ public class TestTraj : MonoBehaviour
     
     //private List<HitData> _hitDatas;
     private HitData[] _hitDatas;
+    private Vector3[] hitPoints;
     private int hitNum;
     private void NewRaycast()
     {
@@ -149,7 +153,7 @@ public class TestTraj : MonoBehaviour
         //if (hitNum == 0)
         {
             GetRaycastPoint(transform.position, transform.forward);
-           
+            _hitDatas = new HitData[maxHits];
         }
 
         for (int i = 0; i < maxHits; i++)
@@ -163,19 +167,20 @@ public class TestTraj : MonoBehaviour
    // private (Vector3 point, Transform hitTrans) GetRaycastPoint(Vector3 pos, Vector3 dir)
     private void GetRaycastPoint(Vector3 pos, Vector3 dir)
     {
-        if (Physics.Raycast(pos, dir, out RaycastHit hit, Mathf.Infinity, 1 << 8))
+        
+        if (Physics.Raycast(pos, dir, out RaycastHit hit, Mathf.Infinity, 1 << 8) && hitNum < maxHits)
         {
             hitNum++;
             
             Vector3 contactPoint = hit.point;
-            Vector3 reflectedDirection = Vector3.Reflect(transform.forward, hit.normal);
+            Vector3 reflectedDirection = Vector3.Reflect(dir, hit.normal);
             
             //if hit num not too large call this again
             //add list of data type to store hit and positions and normals => can then set linerenderer from list
             //can return the entire list.
 
             //might be setting the wrong position
-            if (hitNum < maxHits)
+            //if (hitNum < maxHits)
             {
                 HitData hitData = new HitData();
                 hitData.hitPoint = hit.point;
@@ -192,10 +197,11 @@ public class TestTraj : MonoBehaviour
         {
             Debug.Log("reset to 0");
             hitNum = 0; //change?
+           
             //return list you have
             //return (transform.position + transform.forward * 5f, null);
         }
-        //if hit something, check 
+        //set all Line Points from Hit Array
         SetAllLinePoints();
         
     }
@@ -206,9 +212,9 @@ public class TestTraj : MonoBehaviour
         for (int i = 0; i < _hitDatas.Length; i++)
         {
             _lineRenderer.SetPosition(i, _hitDatas[i].hitPoint);
-            
         }
         //_hitDatas = new HitData[maxHits];
+       
         
     }
 
