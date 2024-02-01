@@ -210,12 +210,12 @@ public class TestTraj : MonoBehaviour
 
     private void SetAllLinePoints()
     {
-        //Debug.Log("setAllLinePoints");
+        
         for (int i = 0; i < _hitDatas.Length; i++)
         {
             _lineRenderer.SetPosition(i, _hitDatas[i].hitPoint);
         }
-        //_hitDatas = new HitData[maxHits];
+        
        
         
     }

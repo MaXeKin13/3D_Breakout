@@ -45,9 +45,10 @@ public class Bullet : MonoBehaviour
     {
         if (other.transform.CompareTag("Powerup"))
         {
+            other.transform.GetComponent<Powerup>().OnActivate();
             if (other.transform.GetComponent<Powerup>()._powerupType == Powerup.PowerupType.Double)
             {
-                other.gameObject.SetActive(false);
+                //other.gameObject.SetActive(false);
                 _rb.AddForce(transform.right * speed / 2f, ForceMode.Impulse);
                 Instantiate(gameObject);
             }

@@ -9,10 +9,17 @@ public class Powerup : MonoBehaviour
         Double,
         Triple,
         Fast,
-        
-            
-            
     }
 
+    public GameObject particleSystem;
+
      public PowerupType _powerupType = new PowerupType();
+
+     public void OnActivate()
+     {
+         GetComponent<Collider>().enabled = false;
+         GetComponent<MeshRenderer>().enabled = false;
+         GameObject _system = Instantiate(particleSystem, transform);
+         Destroy(gameObject, 2f);
+     }
 }
