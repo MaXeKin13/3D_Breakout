@@ -20,6 +20,8 @@ public class TestTraj : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
         
         _hitDatas = new HitData[maxHits];
+
+        
     }
 
     private void Update()
@@ -218,6 +220,6 @@ public class TestTraj : MonoBehaviour
         
     }
 
+
     
-   
 }
