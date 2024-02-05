@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     public GameObject hitEffect;
     [Space] 
     public float power;
-    
+
     private Rigidbody _rb;
     private float currentTime;
     private void Awake()
@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour
         Shoot();
         StartCoroutine(DespawnTimer());
     }
+
 
     private void Shoot()
     {
@@ -50,7 +51,16 @@ public class Bullet : MonoBehaviour
             {
                 //other.gameObject.SetActive(false);
                 _rb.AddForce(transform.right * speed / 2f, ForceMode.Impulse);
+                GameObject bull2 = Instantiate(gameObject);
+                bull2.GetComponent<Rigidbody>().AddForce(-bull2.transform.right * speed / 2f, ForceMode.Impulse);
+            }
+            if (other.transform.GetComponent<Powerup>()._powerupType == Powerup.PowerupType.Triple)
+            {
                 Instantiate(gameObject);
+                _rb.AddForce(transform.right * speed / 2f, ForceMode.Impulse);
+                GameObject bull2 = Instantiate(gameObject);
+                bull2.GetComponent<Rigidbody>().AddForce(-bull2.transform.right * speed / 2f, ForceMode.Impulse);
+                
             }
         }
     }

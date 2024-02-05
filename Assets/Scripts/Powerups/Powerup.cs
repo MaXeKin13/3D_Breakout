@@ -9,8 +9,10 @@ public class Powerup : MonoBehaviour
         Double,
         Triple,
         Fast,
+        Big,
     }
 
+    //public GameObject bullet;
     public GameObject particleSystem;
 
      public PowerupType _powerupType = new PowerupType();
