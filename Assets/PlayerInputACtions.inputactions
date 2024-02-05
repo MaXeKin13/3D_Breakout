@@ -202,16 +202,72 @@
             "id": "1598e19b-b982-4c60-9514-be545743534d",
             "actions": [
                 {
-                    "name": "SnapCamera",
+                    "name": "CamControl",
                     "type": "Value",
-                    "id": "17691b47-441f-4bc1-b01c-eff17b94a874",
-                    "expectedControlType": "Axis",
+                    "id": "8fbd828f-1e99-482a-8256-52300170b605",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 }
             ],
-            "bindings": []
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "b6311f1d-2ba4-4850-b2b9-efc7febe495a",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CamControl",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "fb7e664c-d41a-473b-b138-d93765f8ded0",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CamControl",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "1dd2d16e-a3d0-4a5a-a7ef-d5c46ab63cd6",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CamControl",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "5717a6aa-6b17-4a8c-a00d-eebac62429b8",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CamControl",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "79081c9b-e158-4de8-9a2f-d7b6263ff1f6",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CamControl",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
         }
     ],
     "controlSchemes": []

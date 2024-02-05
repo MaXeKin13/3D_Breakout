@@ -19,7 +19,10 @@ public class Powerup : MonoBehaviour
      {
          GetComponent<Collider>().enabled = false;
          GetComponent<MeshRenderer>().enabled = false;
+         transform.GetChild(0).gameObject.SetActive(false);
          GameObject _system = Instantiate(particleSystem, transform);
          Destroy(gameObject, 2f);
+         
+         
      }
 }

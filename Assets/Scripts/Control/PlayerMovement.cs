@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
-   
+    
     public Transform _controlledObj;
 
+    public float speed;
+    [Space]
     public float baseRotationSpeed = 2f;
     public float maxRotationSpeed = 10f;
 
@@ -58,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 inputVector = _playerInputACtions.Player.Movement.ReadValue<Vector2>();
-        float speed = 5f;
+        
         //_rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y)*speed, ForceMode.Force);
         
         // Get the forward direction in local space

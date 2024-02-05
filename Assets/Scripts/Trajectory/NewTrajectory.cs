@@ -76,7 +76,8 @@ public class NewTrajectory : MonoBehaviour
         for (int i = 0; i < _hitDatas.Length; i++)
         {
             //set position of hits after player pos
-            _lineRenderer.SetPosition(i+1, _hitDatas[i].hitPoint);
+            if(i+1 < _hitDatas.Length)
+                _lineRenderer.SetPosition(i+1, _hitDatas[i].hitPoint);
         }
     }
 }

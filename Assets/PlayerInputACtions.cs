@@ -224,16 +224,72 @@ public partial class @PlayerInputACtions: IInputActionCollection2, IDisposable
             ""id"": ""1598e19b-b982-4c60-9514-be545743534d"",
             ""actions"": [
                 {
-                    ""name"": ""SnapCamera"",
+                    ""name"": ""CamControl"",
                     ""type"": ""Value"",
-                    ""id"": ""17691b47-441f-4bc1-b01c-eff17b94a874"",
-                    ""expectedControlType"": ""Axis"",
+                    ""id"": ""8fbd828f-1e99-482a-8256-52300170b605"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 }
             ],
-            ""bindings"": []
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""b6311f1d-2ba4-4850-b2b9-efc7febe495a"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamControl"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""fb7e664c-d41a-473b-b138-d93765f8ded0"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamControl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1dd2d16e-a3d0-4a5a-a7ef-d5c46ab63cd6"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamControl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""5717a6aa-6b17-4a8c-a00d-eebac62429b8"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamControl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""79081c9b-e158-4de8-9a2f-d7b6263ff1f6"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamControl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -247,7 +303,7 @@ public partial class @PlayerInputACtions: IInputActionCollection2, IDisposable
         m_Player_SwapControl = m_Player.FindAction("SwapControl", throwIfNotFound: true);
         // CameraMap
         m_CameraMap = asset.FindActionMap("CameraMap", throwIfNotFound: true);
-        m_CameraMap_SnapCamera = m_CameraMap.FindAction("SnapCamera", throwIfNotFound: true);
+        m_CameraMap_CamControl = m_CameraMap.FindAction("CamControl", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -387,12 +443,12 @@ public partial class @PlayerInputACtions: IInputActionCollection2, IDisposable
     // CameraMap
     private readonly InputActionMap m_CameraMap;
     private List<ICameraMapActions> m_CameraMapActionsCallbackInterfaces = new List<ICameraMapActions>();
-    private readonly InputAction m_CameraMap_SnapCamera;
+    private readonly InputAction m_CameraMap_CamControl;
     public struct CameraMapActions
     {
         private @PlayerInputACtions m_Wrapper;
         public CameraMapActions(@PlayerInputACtions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @SnapCamera => m_Wrapper.m_CameraMap_SnapCamera;
+        public InputAction @CamControl => m_Wrapper.m_CameraMap_CamControl;
         public InputActionMap Get() { return m_Wrapper.m_CameraMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -402,16 +458,16 @@ public partial class @PlayerInputACtions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_CameraMapActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_CameraMapActionsCallbackInterfaces.Add(instance);
-            @SnapCamera.started += instance.OnSnapCamera;
-            @SnapCamera.performed += instance.OnSnapCamera;
-            @SnapCamera.canceled += instance.OnSnapCamera;
+            @CamControl.started += instance.OnCamControl;
+            @CamControl.performed += instance.OnCamControl;
+            @CamControl.canceled += instance.OnCamControl;
         }
 
         private void UnregisterCallbacks(ICameraMapActions instance)
         {
-            @SnapCamera.started -= instance.OnSnapCamera;
-            @SnapCamera.performed -= instance.OnSnapCamera;
-            @SnapCamera.canceled -= instance.OnSnapCamera;
+            @CamControl.started -= instance.OnCamControl;
+            @CamControl.performed -= instance.OnCamControl;
+            @CamControl.canceled -= instance.OnCamControl;
         }
 
         public void RemoveCallbacks(ICameraMapActions instance)
@@ -439,6 +495,6 @@ public partial class @PlayerInputACtions: IInputActionCollection2, IDisposable
     }
     public interface ICameraMapActions
     {
-        void OnSnapCamera(InputAction.CallbackContext context);
+        void OnCamControl(InputAction.CallbackContext context);
     }
 }
