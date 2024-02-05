@@ -12,7 +12,8 @@ public class Powerup : MonoBehaviour
         Big,
     }
 
-    //public GameObject bullet;
+    //object to add to bullet when hit
+    public GameObject bulletEffect;
     public GameObject particleSystem;
 
      public PowerupType _powerupType = new PowerupType();

@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9047071e12325d4784319ba0eb95245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletEffect: {fileID: 147436, guid: 3b671081e44be1c4aa4355e8ba6e8a5e, type: 3}
   particleSystem: {fileID: 102984, guid: 63782bd2b5a23754181adaf65653088a, type: 3}
   _powerupType: 0
 --- !u!1001 &7121552064065942385

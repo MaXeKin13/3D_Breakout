@@ -46,21 +46,35 @@ public class Bullet : MonoBehaviour
     {
         if (other.transform.CompareTag("Powerup"))
         {
-            other.transform.GetComponent<Powerup>().OnActivate();
-            if (other.transform.GetComponent<Powerup>()._powerupType == Powerup.PowerupType.Double)
+            
+            Powerup _powerup = other.GetComponent<Powerup>();
+            //remove visual effect
+            Destroy(transform.GetChild(0).gameObject);
+            //add visual effect
+            Instantiate(_powerup.bulletEffect, transform);
+            
+            _powerup.OnActivate();
+            if (_powerup._powerupType == Powerup.PowerupType.Double)
             {
                 //other.gameObject.SetActive(false);
                 _rb.AddForce(transform.right * speed / 2f, ForceMode.Impulse);
                 GameObject bull2 = Instantiate(gameObject);
-                bull2.GetComponent<Rigidbody>().AddForce(-bull2.transform.right * speed / 2f, ForceMode.Impulse);
-            }
-            if (other.transform.GetComponent<Powerup>()._powerupType == Powerup.PowerupType.Triple)
-            {
-                Instantiate(gameObject);
-                _rb.AddForce(transform.right * speed / 2f, ForceMode.Impulse);
-                GameObject bull2 = Instantiate(gameObject);
-                bull2.GetComponent<Rigidbody>().AddForce(-bull2.transform.right * speed / 2f, ForceMode.Impulse);
                 
+                bull2.GetComponent<Rigidbody>().AddForce(-bull2.transform.right * speed / 2f, ForceMode.Impulse);
+                //destroy original effect
+                Destroy(bull2.transform.GetChild(0).gameObject);
+            }
+            if (_powerup._powerupType == Powerup.PowerupType.Triple)
+            {
+                GameObject bull2 = Instantiate(gameObject);
+                //destroy original effect
+                Destroy(bull2.transform.GetChild(0).gameObject);
+                
+                _rb.AddForce(transform.right * speed / 2f, ForceMode.Impulse);
+                GameObject bull3 = Instantiate(gameObject);
+                bull3.GetComponent<Rigidbody>().AddForce(-bull3.transform.right * speed / 2f, ForceMode.Impulse);
+                //destroy original effect
+                Destroy(bull3.transform.GetChild(0).gameObject);
             }
         }
     }
