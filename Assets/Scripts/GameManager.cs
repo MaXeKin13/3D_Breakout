@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     public GameObject bullet;
+    public int ammo;
+    [Space]
     public float destroyDelay = 2f;
     
     private void Awake()

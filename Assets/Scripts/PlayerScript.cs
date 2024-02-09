@@ -23,8 +23,13 @@ public class PlayerScript : MonoBehaviour
 
     private void ShootBullet(InputAction.CallbackContext context)
     {
-        GameObject bullet = Instantiate(GameManager.Instance.bullet, transform.position, transform.rotation);
-        Destroy(bullet, GameManager.Instance.destroyDelay);
+        if (GameManager.Instance.ammo > 0)
+        {
+            GameObject bullet = Instantiate(GameManager.Instance.bullet, transform.position, transform.rotation);
+            Destroy(bullet, GameManager.Instance.destroyDelay);
+            GameManager.Instance.ammo--;
+            ScoreManager.Instance.UpdateAmmo();
+        }
     }
    
 }
