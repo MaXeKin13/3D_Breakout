@@ -277,17 +277,6 @@ public partial class @PlayerInputACtions: IInputActionCollection2, IDisposable
                     ""action"": ""CamControl"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""79081c9b-e158-4de8-9a2f-d7b6263ff1f6"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CamControl"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         }

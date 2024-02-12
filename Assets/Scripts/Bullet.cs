@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
     private float currentTime;
     private void Awake()
     {
+        GameManager.Instance.activeBullets.Add(this);
         _rb = GetComponent<Rigidbody>();
         Shoot();
         StartCoroutine(DespawnTimer());
@@ -84,9 +85,11 @@ public class Bullet : MonoBehaviour
         while (currentTime < hitTimer)
         {
             currentTime += Time.deltaTime;
-            
+            //add visuals to show delay
             yield return null;
         }
+        
+        GameManager.Instance.activeBullets.Remove(this);
         Destroy(gameObject);
     }
     

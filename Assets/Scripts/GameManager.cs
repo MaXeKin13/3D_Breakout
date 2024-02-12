@@ -7,10 +7,13 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager Instance;
+    public GameObject player;
     public GameObject bullet;
     public int ammo;
     [Space]
     public float destroyDelay = 2f;
+
+    public List<Bullet> activeBullets;
     
     private void Awake()
     {

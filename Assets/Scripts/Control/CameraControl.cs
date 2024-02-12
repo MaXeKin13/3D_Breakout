@@ -22,6 +22,8 @@ public class CameraControl : MonoBehaviour
 
     private GameObject _mainCamera;
     
+    
+    
     private void Start()
     {
         _playerInput = GetComponent<PlayerInput>();
@@ -51,11 +53,11 @@ public class CameraControl : MonoBehaviour
             snapCam.position = up;
             snapCam.rotation = Quaternion.Euler(90, 0, 0);
         }
-        if (view == Vector2.right)
+        /*if (view == Vector2.right)
         {
             snapCam.position = right;
             snapCam.rotation = Quaternion.Euler(0, -90, 0);
-        }
+        }*/
         if (view == Vector2.down)
         {
             snapCam.position = down;
@@ -80,54 +82,7 @@ public class CameraControl : MonoBehaviour
         snapCam.gameObject.SetActive(false);
         _mainCamera.SetActive(true);
     }
-    private void Update()
-    {
-        //Old System
-        /*if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            ChangeView(0);
-            ChangeCam(true);
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            ChangeView(1);
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            ChangeView(2);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            ChangeView(3);
-        }
-        
-        if(Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
-            ChangeCam(false);*/
-    }
 
     
-
-    
-    /*public void ChangeView(int view)
-    {
-        switch (view)
-        {
-            case 0:
-                snapCam.position = up;
-                snapCam.rotation = Quaternion.Euler(90,0, 0);
-                break;
-            case 1:
-                snapCam.position = right;
-                snapCam.rotation = Quaternion.Euler(0,-90, 0);
-                break;
-            case 2:
-                snapCam.position = down;
-                snapCam.rotation = Quaternion.Euler(-90,0, 0);
-                break;
-            case 3:
-                snapCam.position = left;
-                snapCam.rotation = Quaternion.Euler(0,90, 0);
-                break;
-        }
-    }*/
+   
 }
