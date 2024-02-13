@@ -3133,6 +3133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e928e0fbcbae749b4e463d7964dc15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1232932630}
+  _activeBulletIndex: 0
 --- !u!1001 &998170476
 PrefabInstance:
   m_ObjectHideFlags: 0
