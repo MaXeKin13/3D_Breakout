@@ -17,6 +17,7 @@ public class BreakableScript : MonoBehaviour
     {
         xNormal = transform.right;
         _mat = GetComponent<MeshRenderer>();
+        Debug.Log(_mat.material);
         //ChangeColor();
         highlight = transform.GetChild(0).GetComponent<MeshRenderer>();
         ChangeMaterial();
@@ -54,7 +55,7 @@ public class BreakableScript : MonoBehaviour
             switch (health)
             {
                 case 4:
-                    _mat.material.color = Color.yellow;
+                    _mat.material = VisualManager.Instance.blockMaterials[2];
                     break;
                 case 3:
                     _mat.material = VisualManager.Instance.blockMaterials[2];

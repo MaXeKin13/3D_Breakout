@@ -65,11 +65,14 @@ public class FollowCamera : MonoBehaviour
             if (_activeBulletIndex < GameManager.Instance.activeBullets.Count)
             {
                 _activeBulletIndex++;
-                StartCoroutine(FollowBall());               
+                StartCoroutine(FollowBall());
+                VisualManager.Instance.cursor.SetActive(false);
+                VisualManager.Instance.trajectory.SetActive(false);
             }
             else
             {
                 ResetCamera();
+                
             }
         }
         //still doesnt work properly
@@ -89,6 +92,8 @@ public class FollowCamera : MonoBehaviour
 
     public void ResetCamera()
     {
+        VisualManager.Instance.cursor.SetActive(true);
+        VisualManager.Instance.trajectory.SetActive(true);
         _activeBulletIndex = 0;
         transform.parent = player;
         transform.localPosition = Vector3.zero;
