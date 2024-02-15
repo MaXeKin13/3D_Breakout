@@ -25,7 +25,9 @@ public class FollowCamera : MonoBehaviour
     private IEnumerator FollowBall()
     {
         int prevIndex = _activeBulletIndex;
+        //-1 only works for right click?
         _activeBullet = GameManager.Instance.activeBullets[_activeBulletIndex-1].transform;
+        //
         transform.parent = null;
         Debug.Log(_activeBulletIndex);
         while (_activeBulletIndex == prevIndex && _activeBullet != null)

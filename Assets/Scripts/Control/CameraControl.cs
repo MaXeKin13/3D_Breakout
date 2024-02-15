@@ -64,11 +64,11 @@ public class CameraControl : MonoBehaviour
             snapCam.position = down;
             snapCam.rotation = Quaternion.Euler(-90, 0, 0);
         }
-        if (view == Vector2.left)
+        /*if (view == Vector2.left)
         {
             snapCam.position = left;
             snapCam.rotation = Quaternion.Euler(0, 90, 0);
-        }
+        }*/
     }
     public void ChangeToSecondCam(InputAction.CallbackContext context)
     {

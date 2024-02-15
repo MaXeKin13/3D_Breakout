@@ -86,9 +86,11 @@ public class BreakableScript : MonoBehaviour
     }
     void Death()
     {
-        
+        GameObject system = Instantiate(VisualManager.Instance.blockDestroySystem, transform.position, Quaternion.identity);
+        Destroy(system, 1f);
         Destroy(gameObject);
     }
+    
     
     
 }
