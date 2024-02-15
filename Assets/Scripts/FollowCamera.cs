@@ -36,13 +36,12 @@ public class FollowCamera : MonoBehaviour
 
             // Calculate the target position
             Vector3 targetPosition = _activeBullet.position - velocity;
-
-            // Gradually move the camera towards the target position
+           
             if(!hardFollow)
                 transform.position = Vector3.Lerp(transform.position, targetPosition + offset, Time.deltaTime * lerpAmount);
             else
                 transform.position = targetPosition;
-            // Look at the bullet
+           
             transform.LookAt(_activeBullet);
             
             yield return null;
@@ -53,30 +52,39 @@ public class FollowCamera : MonoBehaviour
         
 
        
-        Debug.Log(prevIndex);
+       
 
         //transform.parent = GameManager.Instance.player.transform;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log(_activeBulletIndex);
-            Debug.Log(GameManager.Instance.activeBullets.Count);
+            
             if (_activeBulletIndex < GameManager.Instance.activeBullets.Count)
             {
                 _activeBulletIndex++;
-                StartCoroutine(FollowBall());
-                
+                StartCoroutine(FollowBall());               
             }
             else
             {
                 ResetCamera();
             }
-
-            
         }
+        //still doesnt work properly
+        /*if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (_activeBulletIndex > 0)
+            {
+                _activeBulletIndex--;
+                StartCoroutine(FollowBall());
+            }
+            else
+            {
+                _activeBulletIndex = GameManager.Instance.activeBullets.Count;
+            }
+        }*/
     }
 
     public void ResetCamera()

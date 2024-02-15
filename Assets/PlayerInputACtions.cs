@@ -75,17 +75,6 @@ public partial class @PlayerInputACtions: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""ffd7e04a-5bd5-41ad-afe2-c1e3bb06e602"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""2D Vector"",
                     ""id"": ""b17235ae-53c1-405c-b67b-1f161ba0b88c"",
                     ""path"": ""2DVector"",
