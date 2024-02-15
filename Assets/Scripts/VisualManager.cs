@@ -6,6 +6,7 @@ public class VisualManager: MonoBehaviour
 {
     public static VisualManager Instance;
 
+    public Material[] blockMaterials;
     public GameObject blockDestroySystem;
     void Start()
     {

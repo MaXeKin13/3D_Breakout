@@ -4662,6 +4662,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3037cf5ccdfefda43b65d31fc2fe3718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockMaterials:
+  - {fileID: 2100000, guid: 4c4dc8fea9ed56042a1e58da7b6af7ca, type: 2}
+  - {fileID: 2100000, guid: 8bc64ae7f6996d84abe2d743162bd9f8, type: 2}
+  - {fileID: 2100000, guid: 475380f5a6d62c14a9a681a894e67f49, type: 2}
   blockDestroySystem: {fileID: 102984, guid: 63782bd2b5a23754181adaf65653088a, type: 3}
 --- !u!4 &1493288600
 Transform:
