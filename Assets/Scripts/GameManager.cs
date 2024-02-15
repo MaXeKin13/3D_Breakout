@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = (Instance == null) ? this : Instance;
-        
+
+        activeBullets = new List<Bullet>();
         LockCursor();
     }
 

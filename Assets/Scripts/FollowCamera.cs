@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
+    public bool hardFollow;
+    [Space]
     //follow ball variables
     public Transform player;
-    private Transform _activeBullet;
+    
     public int _activeBulletIndex;
+    [Space]
+    public float lerpAmount = 1f;
+    public Vector3 offset;
 
+    private Transform _activeBullet;
 
     private void Awake()
     {
@@ -30,13 +36,19 @@ public class FollowCamera : MonoBehaviour
             Vector3 targetPosition = _activeBullet.position - velocity;
 
             // Gradually move the camera towards the target position
-            // transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime);
-            transform.position = targetPosition;
+            if(!hardFollow)
+                transform.position = Vector3.Lerp(transform.position, targetPosition + offset, Time.deltaTime * lerpAmount);
+            else
+                transform.position = targetPosition;
             // Look at the bullet
             transform.LookAt(_activeBullet);
             
             yield return null;
+
+            if (_activeBullet == null)
+                ResetCamera();
         }
+        
 
        
         Debug.Log(prevIndex);
@@ -58,13 +70,18 @@ public class FollowCamera : MonoBehaviour
             }
             else
             {
-                _activeBulletIndex = 0;
-                transform.parent = player;
-                transform.localPosition = Vector3.zero;
-                transform.localEulerAngles = Vector3.zero;
+                ResetCamera();
             }
 
             
         }
+    }
+
+    public void ResetCamera()
+    {
+        _activeBulletIndex = 0;
+        transform.parent = player;
+        transform.localPosition = Vector3.zero;
+        transform.localEulerAngles = Vector3.zero;
     }
 }

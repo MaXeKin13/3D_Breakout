@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 
 public class CameraControl : MonoBehaviour
 {
+    
     public Vector3 up;
     public Vector3 right;
     public Vector3 down;
@@ -73,14 +74,15 @@ public class CameraControl : MonoBehaviour
     {
         
             snapCam.gameObject.SetActive(true);
-            _mainCamera.SetActive(false);
+            //_mainCamera.SetActive(false);
         
     }
 
     private void ChangeToMainCam(InputAction.CallbackContext context)
     {
         snapCam.gameObject.SetActive(false);
-        _mainCamera.SetActive(true);
+        //_mainCamera.SetActive(true);
+        
     }
 
     

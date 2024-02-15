@@ -58,8 +58,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c710ea2559d6814ea24635c5e86603c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hardTimer: 1
   speed: 2
-  hitTimer: 5
+  hitTimer: 2
   hitEffect: {fileID: 138478, guid: ca22a39cb3cd5934eb44c379371b2cbb, type: 3}
   power: 0
 --- !u!23 &7631160142479072861

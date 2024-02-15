@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public bool hardTimer;
     public float speed;
     public float hitTimer = 5f;
     public GameObject hitEffect;
@@ -72,6 +73,8 @@ public class Bullet : MonoBehaviour
                 Destroy(bull2.transform.GetChild(0).gameObject);
                 
                 _rb.AddForce(transform.right * speed / 2f, ForceMode.Impulse);
+
+
                 GameObject bull3 = Instantiate(gameObject);
                 bull3.GetComponent<Rigidbody>().AddForce(-bull3.transform.right * speed / 2f, ForceMode.Impulse);
                 //destroy original effect
@@ -82,15 +85,32 @@ public class Bullet : MonoBehaviour
 
     private IEnumerator DespawnTimer()
     {
-        while (currentTime < hitTimer)
+        if (!hardTimer)
         {
-            currentTime += Time.deltaTime;
-            //add visuals to show delay
-            yield return null;
+            while (currentTime < hitTimer)
+            {
+                currentTime += Time.deltaTime;
+                //add visuals to show delay
+                yield return null;
+            }
+            if (GameManager.Instance.activeBullets.Contains(this))
+            {
+                GameManager.Instance.activeBullets.Remove(this);
+                Debug.Log("help");
+                //Destroy(gameObject);
+            }
+        }
+        else
+        {
+            yield return new WaitForSeconds(GameManager.Instance.destroyDelay);
+            if (GameManager.Instance.activeBullets.Contains(this))
+            {
+                GameManager.Instance.activeBullets.Remove(this);
+               
+                Destroy(gameObject);
+            }
         }
         
-        GameManager.Instance.activeBullets.Remove(this);
-        Destroy(gameObject);
     }
     
 }
