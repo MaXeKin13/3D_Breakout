@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
-    
+    public bool staticMove;
     public Transform _controlledObj;
 
     public float speed;
@@ -46,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
         _playerInputACtions = new PlayerInputACtions();
         _playerInputACtions.Player.Enable();
         _playerInputACtions.Player.Jump.performed += Jump;
+        //When Controlling Cam can go down
+        _playerInputACtions.Player.Fall.performed += Fall;
         
         //when player moves mouse
         _playerInputACtions.Player.Rotate.performed += OnMouseMove;
@@ -59,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         Vector2 inputVector = _playerInputACtions.Player.Movement.ReadValue<Vector2>();
         
         //_rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y)*speed, ForceMode.Force);
@@ -70,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = _controlledObj.TransformDirection(new Vector3(inputVector.x, 0, inputVector.y)) * speed;
 
         // Apply force in the transformed local space
+        if(_isControllingCam)
         _rb.AddForce(movement, ForceMode.Force);
     }
 
@@ -101,12 +105,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if(context.performed && _isGrounded == true && !_isControllingCam)
-            _rb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
+        /*if(context.performed && _isGrounded == true && !_isControllingCam)
+            _rb.AddForce(Vector3.up * 5f, ForceMode.Impulse);*/
         if(_isControllingCam)
             _rb.AddForce(Vector3.up * 1f, ForceMode.Impulse);
     }
-    
+
+    public void Fall(InputAction.CallbackContext context)
+    {
+        if (_isControllingCam)
+            _rb.AddForce(Vector3.down * 1f, ForceMode.Impulse);
+    }
+
     //my own attempt
     private void OnMouseMove(InputAction.CallbackContext context)
     {

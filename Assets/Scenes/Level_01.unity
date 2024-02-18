@@ -3474,6 +3474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99efe698cd5e01541aa4801f4195d89a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staticMove: 1
   _controlledObj: {fileID: 963194228}
   speed: 5
   baseRotationSpeed: 0
