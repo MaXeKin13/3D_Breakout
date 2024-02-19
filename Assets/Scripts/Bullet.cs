@@ -81,6 +81,16 @@ public class Bullet : MonoBehaviour
                 Destroy(bull3.transform.GetChild(0).gameObject);
             }
         }
+
+        if(other.transform.CompareTag("Respawn"))
+        {
+            if (GameManager.Instance.activeBullets.Contains(this))
+            {
+                GameManager.Instance.activeBullets.Remove(this);
+
+                Destroy(gameObject);
+            }
+        }
     }
 
     private IEnumerator DespawnTimer()
