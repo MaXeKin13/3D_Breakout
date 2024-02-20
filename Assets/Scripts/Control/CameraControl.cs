@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 
 public class CameraControl : MonoBehaviour
 {
-    
+    public GameObject Roof;
     public Vector3 up;
     public Vector3 right;
     public Vector3 down;
@@ -53,6 +53,9 @@ public class CameraControl : MonoBehaviour
         {
             snapCam.position = up;
             snapCam.rotation = Quaternion.Euler(90, 0, 0);
+            var meshRenderers = Roof.transform.GetComponentsInChildren<MeshRenderer>();
+            foreach (MeshRenderer mesh in meshRenderers)
+                mesh.enabled = false;
         }
         /*if (view == Vector2.right)
         {
@@ -80,6 +83,9 @@ public class CameraControl : MonoBehaviour
 
     private void ChangeToMainCam(InputAction.CallbackContext context)
     {
+        var meshRenderers = Roof.transform.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer mesh in meshRenderers)
+            mesh.enabled = true;
         snapCam.gameObject.SetActive(false);
         //_mainCamera.SetActive(true);
         
