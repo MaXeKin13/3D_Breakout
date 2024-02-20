@@ -15,7 +15,7 @@ public class Powerup : MonoBehaviour
     //object to add to bullet when hit
     public GameObject bulletEffect;
     public GameObject particleSystem;
-
+    public GameObject hitEffect;
      public PowerupType _powerupType = new PowerupType();
 
      public void OnActivate()

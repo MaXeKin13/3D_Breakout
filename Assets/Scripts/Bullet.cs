@@ -37,11 +37,8 @@ public class Bullet : MonoBehaviour
             GameObject hit = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(hit, 0.5f);
 
-            currentTime = 0;
-            
-        }
-
-       
+            currentTime = 0;           
+        }    
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,6 +47,8 @@ public class Bullet : MonoBehaviour
         {
             
             Powerup _powerup = other.GetComponent<Powerup>();
+            //change hit effect
+            hitEffect = _powerup.hitEffect;
             //remove visual effect
             Destroy(transform.GetChild(0).gameObject);
             //add visual effect
@@ -58,7 +57,6 @@ public class Bullet : MonoBehaviour
             _powerup.OnActivate();
             if (_powerup._powerupType == Powerup.PowerupType.Double)
             {
-                //other.gameObject.SetActive(false);
                 _rb.AddForce(transform.right * speed / 2f, ForceMode.Impulse);
                 GameObject bull2 = Instantiate(gameObject);
                 
