@@ -23,10 +23,6 @@ public class Bullet : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         Shoot();
         StartCoroutine(DespawnTimer());
-
-        
-
-
     }
 
 

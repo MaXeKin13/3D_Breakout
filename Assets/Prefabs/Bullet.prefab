@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7631160142479072858}
   - component: {fileID: 7631160142479072856}
   - component: {fileID: 7631160142479072855}
+  - component: {fileID: 4627320406586136597}
   m_Layer: 7
   m_Name: Bullet
   m_TagString: Bullet
@@ -242,6 +243,27 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!95 &4627320406586136597
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631160142479072863}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: edd49d55ad9845349b0b552d3e938b70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9112705447074803766
 GameObject:
   m_ObjectHideFlags: 0
