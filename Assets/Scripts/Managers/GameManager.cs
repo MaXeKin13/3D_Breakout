@@ -18,18 +18,25 @@ public class GameManager : MonoBehaviour
     public List<Bullet> activeBullets;
 
     
+    private PlayerMovement _playerMovement;
     private void Awake()
     {
         Instance = (Instance == null) ? this : Instance;
 
         activeBullets = new List<Bullet>();
+
+        _playerMovement = player.GetComponent<PlayerMovement>();
+
         LockCursor();
     }
 
     private void Update()
     {
-        /*if(Input.GetKeyDown(KeyCode.Alpha0))
-            LockCursor();*/
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            //Pause Menu
+            _playerMovement.SetCanMove(false);
+        }
     }
 
     private void LockCursor()
@@ -60,6 +67,8 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("EndOfGame");
         yield return new WaitForSeconds(1f);
+
+        
         VisualManager.Instance.EndGameUI();
     }
 }

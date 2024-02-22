@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
+    [HideInInspector] public bool canMove;
     public bool staticMove;
     public Transform _controlledObj;
 
@@ -175,5 +176,13 @@ public class PlayerMovement : MonoBehaviour
         {
             _isGrounded = false;
         }
+    }
+
+    public void SetCanMove(bool _enable)
+    {
+        if (_enable)
+            _playerInputACtions.Player.Enable();
+        if(!_enable)
+            _playerInputACtions.Player.Disable();
     }
 }
