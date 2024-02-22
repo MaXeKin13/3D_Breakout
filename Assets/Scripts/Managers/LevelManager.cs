@@ -5,5 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    
+
+    public Scene[] scenes;
+
+    public void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void LoadNextScene()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+
+        SceneManager.LoadScene(scene.buildIndex + 1);
+    }
 }

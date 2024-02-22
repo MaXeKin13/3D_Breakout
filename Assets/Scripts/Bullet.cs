@@ -14,12 +14,19 @@ public class Bullet : MonoBehaviour
 
     private Rigidbody _rb;
     private float currentTime;
+
+
+
     private void Awake()
     {
         GameManager.Instance.AddBullet(this);
         _rb = GetComponent<Rigidbody>();
         Shoot();
         StartCoroutine(DespawnTimer());
+
+        
+
+
     }
 
 
@@ -121,5 +128,9 @@ public class Bullet : MonoBehaviour
         }
         
     }
+
+
     
 }
+    
+

@@ -55,7 +55,7 @@ public class BreakableScript : MonoBehaviour
             switch (health)
             {
                 case 4:
-                    _mat.material = VisualManager.Instance.blockMaterials[2];
+                    _mat.material = VisualManager.Instance.blockMaterials[3];
                     break;
                 case 3:
                     _mat.material = VisualManager.Instance.blockMaterials[2];
