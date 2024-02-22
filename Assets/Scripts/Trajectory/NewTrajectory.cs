@@ -63,7 +63,7 @@ public class NewTrajectory : MonoBehaviour
         }
         else
         {
-            Debug.Log("reset to 0");
+            //Debug.Log("reset to 0");
             hitNum = 0; //change?
         }
         //set all Line Points from Hit Array

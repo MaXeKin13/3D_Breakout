@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     private float currentTime;
     private void Awake()
     {
-        GameManager.Instance.activeBullets.Add(this);
+        GameManager.Instance.AddBullet(this);
         _rb = GetComponent<Rigidbody>();
         Shoot();
         StartCoroutine(DespawnTimer());
@@ -84,7 +84,7 @@ public class Bullet : MonoBehaviour
         {
             if (GameManager.Instance.activeBullets.Contains(this))
             {
-                GameManager.Instance.activeBullets.Remove(this);
+                GameManager.Instance.RemoveBullet(this);
 
                 Destroy(gameObject);
             }
@@ -103,7 +103,8 @@ public class Bullet : MonoBehaviour
             }
             if (GameManager.Instance.activeBullets.Contains(this))
             {
-                GameManager.Instance.activeBullets.Remove(this);
+                GameManager.Instance.RemoveBullet(this);
+                
                 Debug.Log("help");
                 //Destroy(gameObject);
             }
@@ -113,8 +114,8 @@ public class Bullet : MonoBehaviour
             yield return new WaitForSeconds(GameManager.Instance.destroyDelay);
             if (GameManager.Instance.activeBullets.Contains(this))
             {
-                GameManager.Instance.activeBullets.Remove(this);
-               
+                GameManager.Instance.RemoveBullet(this);
+
                 Destroy(gameObject);
             }
         }
