@@ -15,7 +15,8 @@ public class Bullet : MonoBehaviour
     private Rigidbody _rb;
     private float currentTime;
 
-
+    //GravField
+    private bool _inGrav;
 
     private void Awake()
     {
@@ -92,6 +93,12 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if(other.transform.CompareTag("Grav"))
+        {
+            _inGrav = true;
+            StartCoroutine(GravForce(other.transform, other.transform.GetComponent<GravSphere>().strength));
+        }
     }
 
     private IEnumerator DespawnTimer()
@@ -123,6 +130,21 @@ public class Bullet : MonoBehaviour
             }
         }
         
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.CompareTag("Grav"))
+            _inGrav = false;
+    }
+
+    private IEnumerator GravForce(Transform gravSphere, float strength)
+    {
+        while (_inGrav) 
+        {
+            _rb.AddForce(gravSphere.position - transform.position* strength, ForceMode.Force );
+            yield return null;
+        }
     }
 
 
