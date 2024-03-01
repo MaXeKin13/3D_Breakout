@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,1426 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5182d654953e9489beb87331f3cb3d
+      internalID: -1451761293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed054e95117affd40b2221376bca32c6
+      internalID: -886501207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d609a79a03495ac4db763b5cd1bff05b
+      internalID: 1400858597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1695e2f5579aec42a28a531d8ab3867
+      internalID: 1889711789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fac18e6e8d88ab48940477fecb79b64
+      internalID: -1487297267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75503d4fd3bf0b45ac6ea57486909f8
+      internalID: 453562040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca9c30be956b1a44a0accbf979b63ae
+      internalID: 1884213879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fe428fdc9cf04843a0205a53e607943
+      internalID: -644075718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b6c5a345b547a540bedea02b884085d
+      internalID: 847489075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89740b6876e99a448f272f62048dec0
+      internalID: 1757124808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c942fc0dc4a4c41be6b0a83c4735e6
+      internalID: 814062393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a80a6120b2bdbca439f606ad49e75d47
+      internalID: 48741082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad69acff70c12742a83f0af2b48593a
+      internalID: 251769243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2290e1367e5880948bf084ccc5af893e
+      internalID: 285431121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac1854c7ed5b8b48830bba434034903
+      internalID: 413048374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 771f3086c840710428029e950fb27d3c
+      internalID: 558853877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06dea58d3f0f634ba5fc3b009244af4
+      internalID: 1452407539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e4e786717cbc340a552c673995e60c
+      internalID: 739662699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bdf7d91e6aa0e44b83b69ccb90ace7
+      internalID: 806506426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc826484092d984e82743c500d77703
+      internalID: -1460096476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a965fd18b2795345a0485ff0b470616
+      internalID: -582474608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c93b2b02bde3649a071ca5ef51cdca
+      internalID: -357820477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9f9b112b5763849905bb9a4390c720
+      internalID: -2138039781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabd7a60d138db44191e7aacbd38a404
+      internalID: -591349110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a1356de6d52324896849a02ef5e863
+      internalID: -1358033921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f18cfa692cf3a4a83092b719a960e0
+      internalID: 579768029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bfa1a2df9997d7409d04ca06fb8fb43
+      internalID: 584521932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7c758a203f49c4e9076ea17b443b3f
+      internalID: -595842494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7524cbeafb78bdb49ba4958c59785392
+      internalID: 1795396812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c87f8ebb79aef4b96c0ef70f02c45e
+      internalID: 483625438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132e6a1a2c166064494afafb1727bb02
+      internalID: -1039734006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003634ce2d2613341859288cea12684b
+      internalID: -1652148223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67de2e7e5ade60748b4b4514962c4890
+      internalID: -26285166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24b657471075d244b6421912262514f
+      internalID: -835342232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f902e7d695d37641ad3c7c14ad9a331
+      internalID: 1071327245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7561e4673447a074097a871673b1c836
+      internalID: -475257073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef84a462ee45b841b453bcaed48e6b9
+      internalID: -1421406484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b71b6d7fe732e46a9f40cd35207546
+      internalID: -510191761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a46408ae585d3434c8dd15d341e24811
+      internalID: -2024682945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9341ee9e24d01274899e51a153259d49
+      internalID: 924222002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce990119e6b9a7e4c89b4e4fb914a7cf
+      internalID: 1940560693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca72a32c6e49c54ab5af1eeaea4a231
+      internalID: -128547177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1914105c03e764eb5eb0d878a1bb88
+      internalID: 1992887966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca7168872217d442ba384166f48dbaf
+      internalID: -336091465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4517a30568d4b5d499273ddcce3f34ab
+      internalID: -781686773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70eef2678f42544e87173f884fc8a5c
+      internalID: -700656106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60514e8b0f2eef469de787da672bc35
+      internalID: 613827725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad41a93f710951646aec7d45543aa9f1
+      internalID: 765697534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fbc787adf57a3c409560344bb7b984c
+      internalID: -60574677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66c2e65147907b4f9dd06721d23c5fd
+      internalID: 1799075999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13057844955f9c4ea42ff5a1558f480
+      internalID: 1989493743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cea289f1a869d247ab36f501ba1f930
+      internalID: 1601392709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8c804327c1cd641bdcb7277a3420c6
+      internalID: 257099297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75d484545d4a6f43a045bcb3002ee8a
+      internalID: 248732283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23fc315910e2594b980c51f2f7fc2f6
+      internalID: 1888866919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5113cbfb1dbfd5744a61f35e05f76300
+      internalID: -1570290748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f18e7110e6a3643b66e321744acc29
+      internalID: -710605996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33d147dde52c2e4cbcd1140e1e0fb62
+      internalID: -1576225492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef53659c98faa754f9efad7d0cf691f6
+      internalID: -1689721524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc3f08938fcea443a78b1fd0a7edb81
+      internalID: 1766910627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea72ff020030b246b997bc04de5b731
+      internalID: -157749665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 776c42a69a8f78748901fe1c13210dea
+      internalID: -2140806005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13652d2257e92e4d8de8766bd0ba2fc
+      internalID: -6846988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiscoSpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a210c7c16178f384f80dc39bec7b0b0b
+      internalID: -403725215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 91bc45b3dbb2e9c48900fb7f9738ee05
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DiscoSpriteSheet_0: -1451761293
+      DiscoSpriteSheet_1: -886501207
+      DiscoSpriteSheet_10: 814062393
+      DiscoSpriteSheet_11: 48741082
+      DiscoSpriteSheet_12: 251769243
+      DiscoSpriteSheet_13: 285431121
+      DiscoSpriteSheet_14: 413048374
+      DiscoSpriteSheet_15: 558853877
+      DiscoSpriteSheet_16: 1452407539
+      DiscoSpriteSheet_17: 739662699
+      DiscoSpriteSheet_18: 806506426
+      DiscoSpriteSheet_19: -1460096476
+      DiscoSpriteSheet_2: 1400858597
+      DiscoSpriteSheet_20: -582474608
+      DiscoSpriteSheet_21: -357820477
+      DiscoSpriteSheet_22: -2138039781
+      DiscoSpriteSheet_23: -591349110
+      DiscoSpriteSheet_24: -1358033921
+      DiscoSpriteSheet_25: 579768029
+      DiscoSpriteSheet_26: 584521932
+      DiscoSpriteSheet_27: -595842494
+      DiscoSpriteSheet_28: 1795396812
+      DiscoSpriteSheet_29: 483625438
+      DiscoSpriteSheet_3: 1889711789
+      DiscoSpriteSheet_30: -1039734006
+      DiscoSpriteSheet_31: -1652148223
+      DiscoSpriteSheet_32: -26285166
+      DiscoSpriteSheet_33: -835342232
+      DiscoSpriteSheet_34: 1071327245
+      DiscoSpriteSheet_35: -475257073
+      DiscoSpriteSheet_36: -1421406484
+      DiscoSpriteSheet_37: -510191761
+      DiscoSpriteSheet_38: -2024682945
+      DiscoSpriteSheet_39: 924222002
+      DiscoSpriteSheet_4: -1487297267
+      DiscoSpriteSheet_40: 1940560693
+      DiscoSpriteSheet_41: -128547177
+      DiscoSpriteSheet_42: 1992887966
+      DiscoSpriteSheet_43: -336091465
+      DiscoSpriteSheet_44: -781686773
+      DiscoSpriteSheet_45: -700656106
+      DiscoSpriteSheet_46: 613827725
+      DiscoSpriteSheet_47: 765697534
+      DiscoSpriteSheet_48: -60574677
+      DiscoSpriteSheet_49: 1799075999
+      DiscoSpriteSheet_5: 453562040
+      DiscoSpriteSheet_50: 1989493743
+      DiscoSpriteSheet_51: 1601392709
+      DiscoSpriteSheet_52: 257099297
+      DiscoSpriteSheet_53: 248732283
+      DiscoSpriteSheet_54: 1888866919
+      DiscoSpriteSheet_55: -1570290748
+      DiscoSpriteSheet_56: -710605996
+      DiscoSpriteSheet_57: -1576225492
+      DiscoSpriteSheet_58: -1689721524
+      DiscoSpriteSheet_59: 1766910627
+      DiscoSpriteSheet_6: 1884213879
+      DiscoSpriteSheet_60: -157749665
+      DiscoSpriteSheet_61: -2140806005
+      DiscoSpriteSheet_62: -6846988
+      DiscoSpriteSheet_63: -403725215
+      DiscoSpriteSheet_7: -644075718
+      DiscoSpriteSheet_8: 847489075
+      DiscoSpriteSheet_9: 1757124808
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

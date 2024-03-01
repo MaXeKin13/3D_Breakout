@@ -23888,7 +23888,7 @@ SpriteRenderer:
   m_Size: {x: 38.45, y: 21.63709}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1141492040
@@ -32798,6 +32798,43 @@ MonoBehaviour:
   blockDestroySystem: {fileID: 102984, guid: 63782bd2b5a23754181adaf65653088a, type: 3}
   GameplayUI: {fileID: 1124951829}
   WinUI: {fileID: 374247103}
+  discoUI:
+  - discos:
+    - {fileID: -26285166, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -835342232, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: 1071327245, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -475257073, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -1421406484, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -510191761, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -2024682945, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: 924222002, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+  - discos:
+    - {fileID: -1358033921, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: 579768029, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: 584521932, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -595842494, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: 1795396812, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: 483625438, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -1039734006, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -1652148223, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+  - discos:
+    - {fileID: 1940560693, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -128547177, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: 1992887966, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -336091465, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -781686773, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -700656106, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: 613827725, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: 765697534, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+  - discos:
+    - {fileID: -710605996, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -1576225492, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -1689721524, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: 1766910627, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -157749665, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -2140806005, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -6846988, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
+    - {fileID: -403725215, guid: 8ed02925c1248574ba4f2da1eb0f9aa6, type: 3}
 --- !u!4 &1493288600
 Transform:
   m_ObjectHideFlags: 0
