@@ -143,7 +143,7 @@ public class Bullet : MonoBehaviour
         while (_inGrav) 
         {
             _rb.AddForce(gravSphere.position - transform.position* strength, ForceMode.Force );
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
     }
 

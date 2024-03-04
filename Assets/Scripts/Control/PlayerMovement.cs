@@ -76,16 +76,24 @@ public class PlayerMovement : MonoBehaviour
         // Apply force in the transformed local space
         if(_isControllingCam)
         _rb.AddForce(movement, ForceMode.Force);
-    }
 
-    private void LateUpdate()
-    {
-        float horizontalRotation = _rotateInput.x* CalculateRotationSpeed()/xRotateReduction;
-        float verticalRotation = _rotateInput.y* CalculateRotationSpeed()/yRotateReduction;
+
+        float horizontalRotation = _rotateInput.x * CalculateRotationSpeed() / xRotateReduction;
+        float verticalRotation = _rotateInput.y * CalculateRotationSpeed() / yRotateReduction;
 
         _controlledObj.localEulerAngles += new Vector3(-verticalRotation, horizontalRotation, 0);
 
         _previousRotateInput = _rotateInput;
+    }
+
+    private void LateUpdate()
+    {
+        /*float horizontalRotation = _rotateInput.x* CalculateRotationSpeed()/xRotateReduction;
+        float verticalRotation = _rotateInput.y* CalculateRotationSpeed()/yRotateReduction;
+
+        _controlledObj.localEulerAngles += new Vector3(-verticalRotation, horizontalRotation, 0);
+
+        _previousRotateInput = _rotateInput;*/
     }
 
     private float _previousRotationSpeed;
@@ -96,8 +104,8 @@ public class PlayerMovement : MonoBehaviour
             // Calculate the speed based on the change in input
             float rotationSpeed = baseRotationSpeed + _rotateInput.magnitude * maxRotationSpeed;
     
-            // Optionally, you can apply a smoothing factor to make the rotation more gradual
-            rotationSpeed = Mathf.Lerp(_previousRotationSpeed, rotationSpeed, Time.deltaTime * smoothingFactor);
+            // Optionally, you can apply a smoothing factor to make the rotation more gradual// changed to fixedDeltaTime
+            rotationSpeed = Mathf.Lerp(_previousRotationSpeed, rotationSpeed, Time.fixedDeltaTime * smoothingFactor);
     
             _previousRotationSpeed = rotationSpeed;
 

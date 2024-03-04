@@ -121,9 +121,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2335
-        width: 3849
-        height: 2169
+        y: 895
+        width: 1476
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: DiscoFloor_1
       rect:
         serializedVersion: 2
-        x: 4175
-        y: 2335
-        width: 3852
-        height: 2169
+        x: 1601
+        y: 895
+        width: 1479
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: DiscoFloor_2
       rect:
         serializedVersion: 2
-        x: 8270
-        y: 2335
-        width: 3849
-        height: 2169
+        x: 3172
+        y: 895
+        width: 1476
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,8 +185,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3849
-        height: 2169
+        width: 1476
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: DiscoFloor_4
       rect:
         serializedVersion: 2
-        x: 4175
+        x: 1601
         y: 0
-        width: 3852
-        height: 2169
+        width: 1479
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: DiscoFloor_5
       rect:
         serializedVersion: 2
-        x: 8270
+        x: 3172
         y: 0
-        width: 3849
-        height: 2169
+        width: 1476
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
