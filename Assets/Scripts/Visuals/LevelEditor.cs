@@ -9,8 +9,6 @@ public class LevelEditor : MonoBehaviour
     //grid constrained to certain area (have to set bounds), instead snap to certain position.
     //grid only useful if you need to know neighbors, etc;
     //use local position for everything + parent it
-    public Vector3 position;
-    public Vector3 rotation;
 
     public int rowLength;
     public int collumnLength;
@@ -31,16 +29,20 @@ public class LevelEditor : MonoBehaviour
         }
         //get size of block
         cellSize = block.GetComponentInChildren<MeshRenderer>().bounds.size;
-        Debug.Log("Spawn");
+        
         //set bounds
-        int currentY = Mathf.RoundToInt(position.y);
+        
 
-        for(int i = 0; i< rowLength; i++)
+        for(int y = 0; y< collumnLength; y++)
         {
-            int boundsX = Mathf.RoundToInt(cellSize.x);
-            Debug.Log(boundsX);
-            grid[i, currentY] = Instantiate(block, new Vector3((boundsX + i)* boundsX, currentY, position.z), Quaternion.identity, transform);
-            //if done through y, swap i and currentY
+            //spawn collumn first
+            for (int x = 0; x < rowLength; x++)
+            {
+                int boundsX = Mathf.RoundToInt(cellSize.x);
+                int boundsY = Mathf.RoundToInt(cellSize.y);
+                Debug.Log(boundsX);
+                grid[x, y] = Instantiate(block, new Vector3(x * boundsX, y * boundsY, transform.position.z), Quaternion.identity, transform);                
+            }
         }
     }
 }

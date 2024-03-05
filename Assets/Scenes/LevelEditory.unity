@@ -4254,7 +4254,7 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: -11}
   rotation: {x: 0, y: 90, z: 0}
   rowLength: 4
-  collumnLength: 1
+  collumnLength: 2
   cellSize: {x: 3, y: 2, z: 1}
 --- !u!1 &232763683
 GameObject:

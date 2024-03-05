@@ -15,13 +15,14 @@ public class BreakableScript : MonoBehaviour
     [HideInInspector] public Vector3 xNormal;
 
     private MeshRenderer _mat;
-    public SpriteAnim _spriteAnim;
+    public SpriteAnim[] _spriteAnim;
     private void Start()
     {
         xNormal = transform.right;
         _mat = GetComponent<MeshRenderer>();
 
-        _spriteAnim = GetComponentInChildren<SpriteAnim>();
+        
+        _spriteAnim = GetComponentsInChildren<SpriteAnim>();
         //ChangeColor();
         highlight = transform.GetChild(0).GetComponent<MeshRenderer>();
         ChangeMaterial();
@@ -78,23 +79,26 @@ public class BreakableScript : MonoBehaviour
 
     void ChangeDisco()
     {
-       
+        foreach (SpriteAnim anim in _spriteAnim)
+        {
             switch (health)
             {
                 case 4:
                     //Get List of DiscoUI class, then get the array of sprites in discoUI[4]
-                    _spriteAnim.sprites = VisualManager.Instance.discoUI[3].discos;
+                    //_spriteAnim.sprites = VisualManager.Instance.discoUI[3].discos;
+                    anim.sprites = VisualManager.Instance.discoUI[3].discos;
                     break;
                 case 3:
-                    _spriteAnim.sprites = VisualManager.Instance.discoUI[2].discos;
+                    anim.sprites = VisualManager.Instance.discoUI[2].discos;
                     break;
                 case 2:
-                    _spriteAnim.sprites = VisualManager.Instance.discoUI[1].discos;
+                    anim.sprites = VisualManager.Instance.discoUI[1].discos;
                     break;
                 case 1:
-                    _spriteAnim.sprites = VisualManager.Instance.discoUI[0].discos;
+                    anim.sprites = VisualManager.Instance.discoUI[0].discos;
                     break;
             }
+        }
     }
     void ChangeColor()
     {

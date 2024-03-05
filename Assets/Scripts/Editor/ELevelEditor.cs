@@ -25,7 +25,9 @@ public class ELevelEditor : Editor
     }
     private void OnSceneGUI()
     {
-        //LevelEditor pathMovement = (MaxLineBezierMovement)target;
+        LevelEditor levelEditor = (LevelEditor)target;
+
+        //Handles.DrawWireDisc
     }
 
     private void OnEnable()
