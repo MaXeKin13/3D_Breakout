@@ -9,8 +9,32 @@ public class ELevelEditor : Editor
 {
     private LevelEditor _levelEditor;
 
-    void CreateRow(int num)
+    public override void OnInspectorGUI()
     {
+        //
+        DrawDefaultInspector();
+        //Set current position to animation position
+        if (GUILayout.Button("SpawnRow"))
+        {
+            _levelEditor.SetGrid();
+            SceneView.RepaintAll();
+        }
+       
 
+
+    }
+    private void OnSceneGUI()
+    {
+        //LevelEditor pathMovement = (MaxLineBezierMovement)target;
+    }
+
+    private void OnEnable()
+    {
+        if (!_levelEditor)
+        {
+            //target is object
+            _levelEditor = target as LevelEditor;
+
+        }
     }
 }
