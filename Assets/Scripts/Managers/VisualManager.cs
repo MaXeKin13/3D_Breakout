@@ -14,6 +14,7 @@ public class VisualManager: MonoBehaviour
     
     public Material[] blockMaterials;
     public GameObject blockDestroySystem;
+    public GameObject blockHitSystem;
 
     [Space]
     public GameObject GameplayUI;

@@ -16,6 +16,7 @@ public class BreakableScript : MonoBehaviour
 
     private MeshRenderer _mat;
     public SpriteAnim[] _spriteAnim;
+    //public GameObject changeParticle;
     private void Start()
     {
         xNormal = transform.right;
@@ -31,6 +32,14 @@ public class BreakableScript : MonoBehaviour
         
     }
 
+    private void OnHitParticle()
+    {
+       foreach (var sprite in _spriteAnim)
+        {
+            GameObject particle = Instantiate(VisualManager.Instance.blockHitSystem, sprite.transform.position, Quaternion.identity);
+            Destroy(particle, 1f);
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.CompareTag("Bullet") && canBeDestroyed)
@@ -42,6 +51,7 @@ public class BreakableScript : MonoBehaviour
         health--;
         ChangeMaterial();
         ChangeDisco();
+        OnHitParticle();
         ScoreManager.Instance.AddScore(1);
         if(health <= 0)
             Death();
