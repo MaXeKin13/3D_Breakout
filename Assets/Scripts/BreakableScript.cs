@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BreakableScript : MonoBehaviour
 {
     public bool canBeDestroyed = true;
@@ -117,7 +118,21 @@ public class BreakableScript : MonoBehaviour
 
     private IEnumerator DiscoHitAnim(Transform anim)
     {
-        yield return null;
+        float t = 0f;
+        while (anim.localScale.x < 4)
+        {
+            //anim.localScale += new Vector3(0.01f, 0.01f, 0f);
+            anim.localScale = new Vector3(Mathf.Lerp(3.5f, 4f, t), Mathf.Lerp(5f, 5.5f, t), 1);
+            t += 5f * Time.deltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+        t = 0f;
+        while (anim.localScale.x > 3.5f)
+        {
+            anim.localScale = new Vector3(Mathf.Lerp(4f, 3.5f, t), Mathf.Lerp(5.5f, 5f, t), 1);
+            t += 5f * Time.deltaTime;
+            yield return new WaitForFixedUpdate();
+        }
     }
     
     void Death()
