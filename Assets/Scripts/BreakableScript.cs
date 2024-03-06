@@ -36,10 +36,12 @@ public class BreakableScript : MonoBehaviour
     {
        foreach (var sprite in _spriteAnim)
         {
+            //TODO: grow disco ball and go back quickly.
             GameObject particle = Instantiate(VisualManager.Instance.blockHitSystem, sprite.transform.position, Quaternion.identity);
             Destroy(particle, 1f);
         }
     }
+   
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.CompareTag("Bullet") && canBeDestroyed)
@@ -49,7 +51,7 @@ public class BreakableScript : MonoBehaviour
     void GetHit()
     {
         health--;
-        ChangeMaterial();
+        //ChangeMaterial();
         ChangeDisco();
         OnHitParticle();
         ScoreManager.Instance.AddScore(1);
@@ -108,44 +110,16 @@ public class BreakableScript : MonoBehaviour
                     anim.sprites = VisualManager.Instance.discoUI[0].discos;
                     break;
             }
+            //anim change Animation (grow-shrink)
+            StartCoroutine(DiscoHitAnim(anim.transform));
         }
     }
-    void ChangeColor()
+
+    private IEnumerator DiscoHitAnim(Transform anim)
     {
-        /*if(!isTransparent)
-            switch (health)
-            {
-                case 4:
-                    _mat.color = Color.yellow;
-                    break;
-                case 3: 
-                    _mat.color = Color.green;
-                    break;
-                case 2:
-                    _mat.color = Color.blue;
-                    break;
-                case 1:
-                    _mat.color = Color.red;
-                    break;
-            }
-        else
-            switch (health)
-            {
-                case 4:
-                    _mat.color = new Color(1, 0.92f, 0.016f, 0.3f);
-                    break;
-                case 3: 
-                    _mat.color = new Color(0, 1f, 0f, 0.3f);
-                    break;
-                case 2:
-                    _mat.color = new Color(0, 0, 1, 0.3f);
-                    break;
-                case 1:
-                    _mat.color = new Color(1, 0, 0f, 0.3f);
-                    break;
-            }
-        */
+        yield return null;
     }
+    
     void Death()
     {
         GameObject system = Instantiate(VisualManager.Instance.blockDestroySystem, transform.position, Quaternion.identity);

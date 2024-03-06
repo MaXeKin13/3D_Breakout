@@ -22,9 +22,11 @@ public class CameraControl : MonoBehaviour
     public Vector2 inputVector;
 
     private GameObject _mainCamera;
-    
-    
-    
+
+
+    //roof variables
+    private MeshRenderer[] _roofRenderers;
+    private SpriteRenderer[] _roofSprites;
     private void Start()
     {
         _playerInput = GetComponent<PlayerInput>();
@@ -39,6 +41,9 @@ public class CameraControl : MonoBehaviour
         _mainCamera = Camera.main.gameObject;
         //_playerInputACtions.CameraMap.SnapCamera.performed += ctx => ChangeView(ctx.ReadValue<float>());
 
+        //set up roof Variables
+        _roofRenderers = Roof.transform.GetComponentsInChildren<MeshRenderer>();
+        _roofSprites = Roof.transform.GetComponentsInChildren<SpriteRenderer>();
     }
 
     private void Snap(InputAction.CallbackContext context)
@@ -53,9 +58,15 @@ public class CameraControl : MonoBehaviour
         {
             snapCam.position = up;
             snapCam.rotation = Quaternion.Euler(90, 0, 0);
-            var meshRenderers = Roof.transform.GetComponentsInChildren<MeshRenderer>();
-            foreach (MeshRenderer mesh in meshRenderers)
+
+            foreach (MeshRenderer mesh in _roofRenderers)
+            {
                 mesh.enabled = false;
+                
+                
+            }
+            foreach (SpriteRenderer sprite in _roofSprites)
+                sprite.enabled = false;
         }
         /*if (view == Vector2.right)
         {
@@ -76,16 +87,18 @@ public class CameraControl : MonoBehaviour
     public void ChangeToSecondCam(InputAction.CallbackContext context)
     {
         
-            snapCam.gameObject.SetActive(true);
+        snapCam.gameObject.SetActive(true);
             //_mainCamera.SetActive(false);
         
     }
 
     private void ChangeToMainCam(InputAction.CallbackContext context)
     {
-        var meshRenderers = Roof.transform.GetComponentsInChildren<MeshRenderer>();
-        foreach (MeshRenderer mesh in meshRenderers)
+        // = Roof.transform.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer mesh in _roofRenderers)
             mesh.enabled = true;
+        foreach (SpriteRenderer sprite in _roofSprites)
+            sprite.enabled = true;
         snapCam.gameObject.SetActive(false);
         //_mainCamera.SetActive(true);
         

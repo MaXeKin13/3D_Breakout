@@ -18,6 +18,7 @@ public class SpriteAnim : MonoBehaviour
 
     private IEnumerator AnimRoutine()
     {
+        
         while (true)
         {
             _index++;
