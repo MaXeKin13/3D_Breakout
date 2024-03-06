@@ -122,14 +122,14 @@ public class BreakableScript : MonoBehaviour
         while (anim.localScale.x < 4)
         {
             //anim.localScale += new Vector3(0.01f, 0.01f, 0f);
-            anim.localScale = new Vector3(Mathf.Lerp(3.5f, 4f, t), Mathf.Lerp(5f, 5.5f, t), 1);
+            anim.localScale = new Vector3(Mathf.Lerp(3.5f, 6f, t), Mathf.Lerp(5f, 7.5f, t), 1);
             t += 5f * Time.deltaTime;
             yield return new WaitForFixedUpdate();
         }
         t = 0f;
         while (anim.localScale.x > 3.5f)
         {
-            anim.localScale = new Vector3(Mathf.Lerp(4f, 3.5f, t), Mathf.Lerp(5.5f, 5f, t), 1);
+            anim.localScale = new Vector3(Mathf.Lerp(6f, 3.5f, t), Mathf.Lerp(7.5f, 5f, t), 1);
             t += 5f * Time.deltaTime;
             yield return new WaitForFixedUpdate();
         }
