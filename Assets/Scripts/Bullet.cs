@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public float speed;
     public float hitTimer = 5f;
     public GameObject hitEffect;
+    public GameObject deathEffect;
     [Space] 
     public float power;
 
@@ -125,11 +126,19 @@ public class Bullet : MonoBehaviour
             if (GameManager.Instance.activeBullets.Contains(this))
             {
                 GameManager.Instance.RemoveBullet(this);
-
-                Destroy(gameObject);
+                StopBullet();
+                Destroy(gameObject, 1f);
             }
         }
         
+    }
+
+    private void StopBullet()
+    {
+        _rb.velocity = Vector3.zero;
+        GetComponent<MeshRenderer>().enabled = false;
+        GameObject deathParticle = Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(deathParticle, 1f);
     }
 
     private void OnTriggerExit(Collider other)
