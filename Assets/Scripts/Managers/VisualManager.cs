@@ -23,6 +23,9 @@ public class VisualManager: MonoBehaviour
 
    
     [SerializeField] public List<DiscoUI> discoUI = new List<DiscoUI>();
+    [Space]
+    public AudioClip shootSound;
+    public AudioClip hitSound;
 
     void Awake()
     {

@@ -19,6 +19,8 @@ public class Bullet : MonoBehaviour
     //GravField
     private bool _inGrav;
 
+    private AudioSource _audioSource;
+
 
 
     private void Awake()
@@ -27,6 +29,10 @@ public class Bullet : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         Shoot();
         StartCoroutine(DespawnTimer());
+
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.clip = VisualManager.Instance.shootSound;
+        _audioSource.Play();
     }
 
 
@@ -39,7 +45,10 @@ public class Bullet : MonoBehaviour
     {
         if (other.transform.CompareTag("Breakable"))
         {
-            
+            if (_audioSource.clip == VisualManager.Instance.shootSound)
+                _audioSource.clip = VisualManager.Instance.hitSound;
+            PlayAudio();
+
             BreakableScript obj = other.transform.GetComponent<BreakableScript>();
             GameObject hit = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(hit, 0.5f);
@@ -158,7 +167,13 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    
+    private void PlayAudio()
+    {
+        _audioSource.Stop();
 
+        _audioSource.Play();
+    }
     
 }
     
