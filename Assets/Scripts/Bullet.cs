@@ -19,6 +19,8 @@ public class Bullet : MonoBehaviour
     //GravField
     private bool _inGrav;
 
+
+
     private void Awake()
     {
         GameManager.Instance.AddBullet(this);

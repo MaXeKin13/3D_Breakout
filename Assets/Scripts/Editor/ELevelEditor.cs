@@ -19,7 +19,13 @@ public class ELevelEditor : Editor
             _levelEditor.SetGrid();
             SceneView.RepaintAll();
         }
-       
+        if (GUILayout.Button("RemoveRow"))
+        {
+            _levelEditor.RemoveGrid();
+            SceneView.RepaintAll();
+        }
+
+
 
 
     }
@@ -28,6 +34,8 @@ public class ELevelEditor : Editor
         LevelEditor levelEditor = (LevelEditor)target;
 
         //Handles.DrawWireDisc
+        //Handles.DrawGizmos(Gizmos.DrawCube(levelEditor.transform.p));
+        
     }
 
     private void OnEnable()
@@ -36,7 +44,6 @@ public class ELevelEditor : Editor
         {
             //target is object
             _levelEditor = target as LevelEditor;
-
         }
     }
 }

@@ -61,9 +61,7 @@ public class CameraControl : MonoBehaviour
 
             foreach (MeshRenderer mesh in _roofRenderers)
             {
-                mesh.enabled = false;
-                
-                
+                mesh.enabled = false;              
             }
             foreach (SpriteRenderer sprite in _roofSprites)
                 sprite.enabled = false;
