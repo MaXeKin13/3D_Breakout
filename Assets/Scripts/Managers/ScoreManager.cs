@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     public Text ammoText;
 
     public static ScoreManager Instance;
-    private int _score;
+    public int _score { get; private set; }
 
     private void Awake()
     {

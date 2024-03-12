@@ -40,6 +40,10 @@ public class LevelEditor : MonoBehaviour
             //spawn collumn first
             for (int x = 0; x < rowLength; x++)
             {                            
+                Debug.Log(x);
+                Debug.Log(y);
+                Debug.Log(boundsY);
+                Debug.Log(boundsX);
                 grid[x, y] = Instantiate(block, new Vector3(transform.position.x, transform.position.y, 0f) + new Vector3(x * boundsX, y * boundsY, transform.position.z),
                     Quaternion.identity, transform);                
             }
