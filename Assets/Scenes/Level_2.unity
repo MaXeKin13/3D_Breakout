@@ -707,31 +707,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7665684186956268110, guid: e3c55c80b80e2a34680c91d6371bed88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.37
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 7665684186956268110, guid: e3c55c80b80e2a34680c91d6371bed88, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.58
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 7665684186956268110, guid: e3c55c80b80e2a34680c91d6371bed88, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.85238653
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7665684186956268110, guid: e3c55c80b80e2a34680c91d6371bed88, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5229123
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7665684186956268110, guid: e3c55c80b80e2a34680c91d6371bed88, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7665684186956268110, guid: e3c55c80b80e2a34680c91d6371bed88, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7665684186956268110, guid: e3c55c80b80e2a34680c91d6371bed88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 63.056
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7665684186956268110, guid: e3c55c80b80e2a34680c91d6371bed88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -747,7 +747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7665684186956268111, guid: e3c55c80b80e2a34680c91d6371bed88, type: 3}
       propertyPath: rowLength
-      value: 14
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7665684186956268111, guid: e3c55c80b80e2a34680c91d6371bed88, type: 3}
       propertyPath: cellSize.x
