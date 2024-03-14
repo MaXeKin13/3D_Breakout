@@ -29,7 +29,7 @@ public class LevelEditor : MonoBehaviour
             grid = new GameObject[rowLength, collumnLength];
         }
         //get size of block
-        cellSize = block.GetComponentInChildren<MeshRenderer>().bounds.size;
+        SetCellSize();
 
         //set bounds
         int boundsX = Mathf.RoundToInt(cellSize.x);
@@ -57,5 +57,10 @@ public class LevelEditor : MonoBehaviour
             DestroyImmediate(go);
         }
         grid = null;
+    }
+
+    public void SetCellSize()
+    {
+        cellSize = block.GetComponentInChildren<MeshRenderer>().bounds.size;
     }
 }

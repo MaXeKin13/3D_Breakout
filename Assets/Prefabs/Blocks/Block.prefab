@@ -189,7 +189,8 @@ MonoBehaviour:
   health: 2
   highlight: {fileID: 0}
   xNormal: {x: 0, y: 0, z: 0}
-  _spriteAnim: {fileID: 0}
+  _spriteAnim:
+  - {fileID: 0}
 --- !u!65 &5772849143904194383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -294,11 +295,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170622563701882958, guid: 3afbe7a13476a3146a119428758e26b9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.6654
+      value: 2.4155986
       objectReference: {fileID: 0}
     - target: {fileID: 170622563701882958, guid: 3afbe7a13476a3146a119428758e26b9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.667972
+      value: 3.0307274
       objectReference: {fileID: 0}
     - target: {fileID: 170622563701882958, guid: 3afbe7a13476a3146a119428758e26b9, type: 3}
       propertyPath: m_LocalScale.z

@@ -34,7 +34,7 @@ public class ELevelEditor : Editor
         LevelEditor levelEditor = (LevelEditor)target;
 
         //Handles.DrawWireDisc
-        //Handles.DrawGizmos(Gizmos.DrawCube(levelEditor.transform.p));
+        Handles.DrawWireCube(levelEditor.transform.position, levelEditor.cellSize);
         
     }
 
@@ -45,5 +45,16 @@ public class ELevelEditor : Editor
             //target is object
             _levelEditor = target as LevelEditor;
         }
+        GetCellSize();
+    }
+
+    private Vector3 GetCellSize()
+    {
+        LevelEditor levelEditor = (LevelEditor)target;
+
+        levelEditor.SetCellSize();
+
+
+        return levelEditor.cellSize;
     }
 }
