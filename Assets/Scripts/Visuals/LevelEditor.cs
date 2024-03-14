@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelEditor : MonoBehaviour
 {
     public GameObject block;
-
+    public int direction = 1;
     //grid constrained to certain area (have to set bounds), instead snap to certain position.
     //grid only useful if you need to know neighbors, etc;
     //use local position for everything + parent it
@@ -39,13 +39,19 @@ public class LevelEditor : MonoBehaviour
         {
             //spawn collumn first
             for (int x = 0; x < rowLength; x++)
-            {                            
-                Debug.Log(x);
-                Debug.Log(y);
-                Debug.Log(boundsY);
-                Debug.Log(boundsX);
-                grid[x, y] = Instantiate(block, new Vector3(transform.position.x, transform.position.y, 0f) + new Vector3(x * boundsX, y * boundsY, transform.position.z),
-                    Quaternion.identity, transform);                
+            {
+                /* //get rotation of level editor and instantiate from there?
+                 Vector3 pos = new Vector3(transform.position.x, transform.position.y, 0f) + new Vector3(x * boundsX * direction, y * boundsY, transform.position.z);
+                 //get rotation of object, apply it to an empty 
+                 //inverse transform/transform
+                 grid[x, y] = Instantiate(block, pos,
+                     Quaternion.identity, transform);          */
+
+                // Calculate local position relative to the transform's rotation
+                Vector3 localPos = new Vector3(x * boundsX * direction, y * boundsY, 0f);
+                // Transform local position to world position
+                Vector3 pos = transform.TransformPoint(localPos);
+                grid[x, y] = Instantiate(block, pos, transform.rotation, transform);
             }
         }
     }
