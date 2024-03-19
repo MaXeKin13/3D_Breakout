@@ -71,11 +71,11 @@ public class CameraControl : MonoBehaviour
             snapCam.position = right;
             snapCam.rotation = Quaternion.Euler(0, -90, 0);
         }*/
-        if (view == Vector2.down)
+       /* if (view == Vector2.down)
         {
             snapCam.position = down;
             snapCam.rotation = Quaternion.Euler(-90, 0, 0);
-        }
+        }*/
         /*if (view == Vector2.left)
         {
             snapCam.position = left;

@@ -2503,9 +2503,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2527984948730598430, guid: 02daf6092d4a856458413f48de12690c, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2527984948799795460, guid: 02daf6092d4a856458413f48de12690c, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2527984948799795463, guid: 02daf6092d4a856458413f48de12690c, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2527984948799795464, guid: 02daf6092d4a856458413f48de12690c, type: 3}
       propertyPath: m_Pivot.x
