@@ -62,28 +62,30 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
-        Vector2 inputVector = _playerInputACtions.Player.Movement.ReadValue<Vector2>();
-        
-        //_rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y)*speed, ForceMode.Force);
-        
-        // Get the forward direction in local space
-        Vector3 forwardDirection = _controlledObj.forward;
+        if (canMove)
+        {
+            Vector2 inputVector = _playerInputACtions.Player.Movement.ReadValue<Vector2>();
 
-        // Transform the input vector to world space using the object's forward direction
-        Vector3 movement = _controlledObj.TransformDirection(new Vector3(inputVector.x, 0, inputVector.y)) * speed;
+            //_rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y)*speed, ForceMode.Force);
 
-        // Apply force in the transformed local space
-        if(_isControllingCam)
-        _rb.AddForce(movement, ForceMode.Force);
+            // Get the forward direction in local space
+            Vector3 forwardDirection = _controlledObj.forward;
+
+            // Transform the input vector to world space using the object's forward direction
+            Vector3 movement = _controlledObj.TransformDirection(new Vector3(inputVector.x, 0, inputVector.y)) * speed;
+
+            // Apply force in the transformed local space
+            if (_isControllingCam)
+                _rb.AddForce(movement, ForceMode.Force);
 
 
-        float horizontalRotation = _rotateInput.x * CalculateRotationSpeed() / xRotateReduction;
-        float verticalRotation = _rotateInput.y * CalculateRotationSpeed() / yRotateReduction;
+            float horizontalRotation = _rotateInput.x * CalculateRotationSpeed() / xRotateReduction;
+            float verticalRotation = _rotateInput.y * CalculateRotationSpeed() / yRotateReduction;
 
-        _controlledObj.localEulerAngles += new Vector3(-verticalRotation, horizontalRotation, 0);
+            _controlledObj.localEulerAngles += new Vector3(-verticalRotation, horizontalRotation, 0);
 
-        _previousRotateInput = _rotateInput;
+            _previousRotateInput = _rotateInput;
+        }
     }
 
     private void LateUpdate()

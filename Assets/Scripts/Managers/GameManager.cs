@@ -45,6 +45,12 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
     }
 
+    private void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     public void AddBullet(Bullet bullet)
     {
         activeBullets.Add(bullet);
@@ -70,5 +76,8 @@ public class GameManager : MonoBehaviour
 
         
         VisualManager.Instance.EndGameUI();
+
+        UnlockCursor();
+        player.GetComponent<PlayerMovement>().SetCanMove(false);
     }
 }

@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
 
     public void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     public void LoadNextScene()
@@ -23,5 +23,15 @@ public class LevelManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void Reload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
