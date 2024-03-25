@@ -65,6 +65,7 @@ public class CameraControl : MonoBehaviour
             }
             foreach (SpriteRenderer sprite in _roofSprites)
                 sprite.enabled = false;
+            VisualManager.Instance.cursor.SetActive(false);
         }
         /*if (view == Vector2.right)
         {
@@ -98,8 +99,9 @@ public class CameraControl : MonoBehaviour
         foreach (SpriteRenderer sprite in _roofSprites)
             sprite.enabled = true;
         snapCam.gameObject.SetActive(false);
+        VisualManager.Instance.cursor.SetActive(true);
         //_mainCamera.SetActive(true);
-        
+
     }
 
     

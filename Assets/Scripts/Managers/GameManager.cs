@@ -79,5 +79,6 @@ public class GameManager : MonoBehaviour
 
         UnlockCursor();
         player.GetComponent<PlayerMovement>().SetCanMove(false);
+        VisualManager.Instance.cursor.SetActive(false);
     }
 }
