@@ -21,10 +21,10 @@ public class LevelEditor : MonoBehaviour
     public GameObject[,] grid;
     //grid position can be different from grid value;
 
-    
+
     public void SetGrid()
     {
-        if(grid == null)
+        if (grid == null)
         {
             grid = new GameObject[rowLength, collumnLength];
         }
@@ -32,10 +32,13 @@ public class LevelEditor : MonoBehaviour
         SetCellSize();
 
         //set bounds
-        int boundsX = Mathf.RoundToInt(cellSize.x);
+        /*int boundsX = Mathf.RoundToInt(cellSize.x);
         int boundsY = Mathf.RoundToInt(cellSize.y);
+        */
+        float boundsX = (cellSize.x);
+        float boundsY = (cellSize.y);
 
-        for (int y = 0; y< collumnLength; y++)
+        for (int y = 0; y < collumnLength; y++)
         {
             //spawn collumn first
             for (int x = 0; x < rowLength; x++)

@@ -28,9 +28,9 @@ public class ELevelEditor : Editor
             _levelEditor.RemoveGrid();
             SceneView.RepaintAll();
         }
-        if(GUILayout.Button("Flip"))
+        if (GUILayout.Button("Flip"))
         {
-            _levelEditor.direction*=-1;
+            _levelEditor.direction *= -1;
         }
 
 
@@ -42,7 +42,7 @@ public class ELevelEditor : Editor
         LevelEditor levelEditor = (LevelEditor)target;
 
         //Handles.DrawWireDisc
-       // Handles.DrawWireCube(levelEditor.transform.position, levelEditor.cellSize);
+        // Handles.DrawWireCube(levelEditor.transform.position, levelEditor.cellSize);
         GetVisuals();
     }
 
@@ -53,7 +53,7 @@ public class ELevelEditor : Editor
             //target is object
             _levelEditor = target as LevelEditor;
         }
-        
+
         GetCellSize();
     }
     private void GetVisuals()
@@ -61,8 +61,8 @@ public class ELevelEditor : Editor
         LevelEditor levelEditor = (LevelEditor)target;
 
         GetCellSize();
-        int boundsX = Mathf.RoundToInt(levelEditor.cellSize.x);
-        int boundsY = Mathf.RoundToInt(levelEditor.cellSize.y);
+        float boundsX = levelEditor.cellSize.x;
+        float boundsY = levelEditor.cellSize.y;
         /*for (int y = 0; y < collumnLength; y++)
         {
             //spawn collumn first
